@@ -1,5 +1,6 @@
 #任渊生存服务端功能核心插件
 #此插件集成了一些我自己写的功能和服务端数据统计
+#你可以在 https://github.com/lRENyaaa/RenYuan-Core 查看本插件源代码
 
 #防爆模块
 NotBoom:
