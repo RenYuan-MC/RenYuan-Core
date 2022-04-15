@@ -3,6 +3,7 @@ package com.renyuansurvival.renyuancore;
 import com.renyuansurvival.renyuancore.Metrics.Metrics;
 import com.renyuansurvival.renyuancore.Spawn.*;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -11,6 +12,7 @@ public final class RenYuanCore extends JavaPlugin {
 
     public static RenYuanCore Plugin;
     public static String Prefix;
+    public static Location SpawnLocation;
 
     @Override
     public void onEnable() {
@@ -20,6 +22,7 @@ public final class RenYuanCore extends JavaPlugin {
         Plugin = this;
 
         Prefix = getConfig().getString("Message.Prefix", "§f[§6服务器§f] ");
+        SpawnLocation = new Location(Bukkit.getWorld(getConfig().getString("Spawn.World", "spawn")),getConfig().getDouble("Spawn.X",59.5),getConfig().getDouble("Spawn.Y",105.0),getConfig().getDouble("Spawn.Z",-148.5),0.0F,0.0F);
 
 
         if (getConfig().getBoolean("NotBoom.Enable", true)) {
@@ -76,5 +79,9 @@ public final class RenYuanCore extends JavaPlugin {
 
     public static String getPrefix() {
         return Prefix;
+    }
+
+    public static Location getSpawnLocation() {
+        return SpawnLocation;
     }
 }
