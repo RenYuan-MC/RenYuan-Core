@@ -44,3 +44,29 @@ AntiUserName:
 #如果你已经使用了具有类似效果的插件,可以关闭它
 LecternCrashFix:
   Enable: true
+
+#自定义插件所发送的信息
+Message:
+  #发送信息时的前缀
+  Prefix: "§f[§6服务器§f] "
+  #回到主城的提示
+  PlayerSpawn: "已将你传送到主城"
+  #非玩家使用回主城指令的提示
+  ConsoleSpawn: "仅玩家可执行该命令"
+
+#主城相关
+Spawn:
+  #是否启用,如果你已经安装了相似功能的主城插件可以关闭
+  Enable: true
+  #是否启用主城保护,如果你没安装保护类插件则不建议关闭
+  Protect: true
+  #是否关闭主城伤害,除了kill以外所有伤害将会被全部禁用,包括虚空
+  NoDamage: true
+  #是否锁定出生点,每次重生都会回到主城而不是这个世界的出生点
+  LockSpawn: true
+  #主城的世界名
+  World: "spawn"
+  #主城坐标
+  X: 79.5
+  Y: 105.0
+  Z: -149.5
