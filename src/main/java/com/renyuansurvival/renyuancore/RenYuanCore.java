@@ -30,8 +30,8 @@ public final class RenYuanCore extends JavaPlugin {
             getLogger().info("服务端数据统计模块已加载");
         }
 
-        if (getConfig().getBoolean("AntiUserName.Enable", true)) {
-            Bukkit.getPluginManager().registerEvents(new LecternFix(), this);
+        if (getConfig().getBoolean("LecternCrashFix.Enable", true)) {
+            Bukkit.getPluginManager().registerEvents(new LecternCrashFix(), this);
             getLogger().info("讲台崩服修复已开启");
         }
 
