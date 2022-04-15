@@ -21,42 +21,42 @@ public class SpawnProtect implements Listener {
 
     @EventHandler( priority = EventPriority.HIGHEST )
     public void HangingBreakByEntityEvent(HangingBreakByEntityEvent event) {
-        if (event.getRemover() instanceof Player && event.getRemover().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getRemover().hasPermission("Spawn.Build")) {
+        if (event.getRemover() instanceof Player && event.getRemover().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getRemover().hasPermission("spawn.build")) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler( priority = EventPriority.HIGHEST )
     public void BreakBlock(BlockBreakEvent event) {
-        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("Spawn.Build")) {
+        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("spawn.build")) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler( priority = EventPriority.LOWEST )
     public void HangingPlaceEvent(HangingPlaceEvent event) {
-        if (Objects.requireNonNull(event.getPlayer()).getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("Spawn.Build")) {
+        if (Objects.requireNonNull(event.getPlayer()).getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("spawn.build")) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler( priority = EventPriority.HIGHEST )
     public void BlockPlaceEvent(BlockPlaceEvent event) {
-        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("Spawn.Build")) {
+        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("spawn.build")) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler( priority = EventPriority.HIGHEST )
     public void PlayerBucketFillEvent(PlayerBucketFillEvent event) {
-        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("Spawn.Build")) {
+        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("spawn.build")) {
             event.setCancelled(true);
         }
     }
 
     @EventHandler( priority = EventPriority.HIGHEST )
     public void PlayerBucketEmptyEvent(PlayerBucketEmptyEvent event) {
-        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("Spawn.Build")) {
+        if (event.getPlayer().getWorld().getName().contains(config.getString("Spawn.World", "spawn")) && !event.getPlayer().hasPermission("spawn.build")) {
             event.setCancelled(true);
         }
     }

@@ -4,3 +4,10 @@ main: com.renyuansurvival.renyuancore.RenYuanCore
 softdepend: [ floodgate ]
 api-version: 1.17
 authors: [ RENaa_FD ]
+spawn:
+    description: "回主城"
+    usage: "/spawn"
+permissions:
+  spawn.build:
+    description: "主城建筑权限"
+    default: op
