@@ -39,3 +39,8 @@ Metrics:
 #你如果对Floodgate插件的详细功能不够清楚,请不要动它
 AntiUserName:
   Enable: true
+
+#启用防讲台崩服
+#如果你已经使用了具有类似效果的插件,可以关闭它
+LecternCrashFix:
+  Enable: true
