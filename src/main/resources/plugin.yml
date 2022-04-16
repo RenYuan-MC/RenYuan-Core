@@ -1,14 +1,23 @@
 name: RenYuan-Core
 version: '${project.version}'
 main: com.renyuansurvival.renyuancore.RenYuanCore
-softdepend: [ floodgate ]
+softdepend: [ floodgate , Multiverse-Core ]
 api-version: 1.17
 authors: [ RENaa_FD ]
 commands:
   spawn:
     description: "回主城"
     usage: "/spawn"
+  setspawn:
+    description: "设置主城"
+    usage: "/setspawn"
+  renyuancore:
+    description: "任渊功能插件相关指令"
+    usage: "/renyuancore help"
 permissions:
   spawn.build:
     description: "主城建筑权限"
+    default: op
+  spawn.set:
+    description: "主城设置权限"
     default: op

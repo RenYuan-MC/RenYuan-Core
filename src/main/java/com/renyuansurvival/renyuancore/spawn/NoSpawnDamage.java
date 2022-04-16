@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.Spawn;
+package com.renyuansurvival.renyuancore.spawn;
 
 import com.renyuansurvival.renyuancore.RenYuanCore;
 import org.bukkit.entity.Player;

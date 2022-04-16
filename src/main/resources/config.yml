@@ -49,10 +49,14 @@ LecternCrashFix:
 Message:
   #发送信息时的前缀
   Prefix: "§f[§6服务器§f] "
+  #没有权限
+  NoPerMission: "你没有权限"
+  #需要玩家执行的指令提示
+  PlayerCommand: "仅玩家可执行该命令"
   #回到主城的提示
   PlayerSpawn: "已将你传送到主城"
-  #非玩家使用回主城指令的提示
-  ConsoleSpawn: "仅玩家可执行该命令"
+  #设置主城的提示
+  SetSpawn: "已设置主城位置"
 
 #主城相关
 Spawn:

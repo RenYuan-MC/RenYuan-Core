@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.Spawn;
+package com.renyuansurvival.renyuancore.spawn;
 
 import com.renyuansurvival.renyuancore.RenYuanCore;
 import org.bukkit.command.Command;
@@ -18,7 +18,7 @@ public class SpawnCommand implements CommandExecutor {
             ((Player) sender).teleport(RenYuanCore.getSpawnLocation());
             sender.sendMessage(RenYuanCore.getPrefix() + config.getString("Message.PlayerSpawn","已将你传送到主城"));
         }else{
-            sender.sendMessage(RenYuanCore.getPrefix() + config.getString("Message.ConsoleSpawn","仅玩家可执行该命令"));
+            sender.sendMessage(RenYuanCore.getPrefix() + config.getString("Message.PlayerCommand","仅玩家可执行该命令"));
         }
         return true;
     }
