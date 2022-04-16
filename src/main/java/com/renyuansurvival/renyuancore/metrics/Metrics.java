@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.Metrics;
+package com.renyuansurvival.renyuancore.metrics;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
