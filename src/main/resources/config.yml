@@ -58,6 +58,27 @@ Message:
   #设置主城的提示
   SetSpawn: "已设置主城位置"
 
+#检测基岩版玩家是否使用了PocketUI
+#代码参考来自 https://github.com/zimzaza4/BedrockPocketUIWarn
+GeyserPocketUICheck:
+  #是否启用
+  Enable: true
+  #是否踢出玩家
+  Kick:
+    Enable: false
+    #踢出玩家后发送的信息
+    Message: "请将设置选项视频中的UI档案设置为经典"
+  #是否向玩家发送信息(在不踢出玩家的情况下)
+  SendMessage:
+    Enable: true
+    #向玩家发送的信息
+    Message: "服务器不能完美兼容PocketUI,请将设置选项视频中的UI档案设置为经典以提升你的游戏体验"
+
+#用于测试的一些功能
+GeyserFeature:
+  #是否在基岩版玩家加入服务器时向后台发送玩家的使用的客户端
+  SendClientName: false
+
 #主城相关
 Spawn:
   #是否启用,如果你已经安装了相似功能的主城插件可以关闭

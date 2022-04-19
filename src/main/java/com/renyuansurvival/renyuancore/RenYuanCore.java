@@ -33,38 +33,42 @@ public final class RenYuanCore extends JavaPlugin {
         requireNonNull(getCommand("renyuancore")).setTabCompleter(new RenYuanCommand());
         getLogger().info("主指令已注册");
 
-        if (getConfig().getBoolean("NotBoom.Enable", true)) {
+        if (Config.getBoolean("NotBoom.Enable", true)) {
             Bukkit.getPluginManager().registerEvents(new NotBoom(), this);
             getLogger().info("防爆模块已加载,魔改自Coby_Cola的NotBoom插件");
         }
 
-        if (getConfig().getBoolean("AntiUserName.Enable", true)) {
+        if (Config.getBoolean("AntiUserName.Enable", true)) {
             Bukkit.getPluginManager().registerEvents(new AntiUserName(), this);
             getLogger().info("基岩版玩家名称检测模块已加载");
         }
 
-        if (getConfig().getBoolean("Metrics.Enable", true)) {
+        if (Config.getBoolean("Metrics.Enable", true)) {
             Metrics metrics = new Metrics(this);
             metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
             getLogger().info("服务端数据统计模块已加载");
         }
 
-        if (getConfig().getBoolean("LecternCrashFix.Enable", true)) {
+        if (Config.getBoolean("LecternCrashFix.Enable", true)) {
             Bukkit.getPluginManager().registerEvents(new LecternCrashFix(), this);
             getLogger().info("讲台崩服修复模块已开启");
         }
 
-        if (getConfig().getBoolean("Spawn.Enable", true)) {
-            
-            if (getConfig().getBoolean("Spawn.Protect", true)) {
+        if (Config.getBoolean("GeyserPocketUICheck.Enable", true)) {
+            Bukkit.getPluginManager().registerEvents(new GeyserPocketUICheck(), this);
+            getLogger().info("基岩版PocketUI检测模块已开启");
+        }
+
+        if (Config.getBoolean("Spawn.Enable", true)) {
+            if (Config.getBoolean("Spawn.Protect", true)) {
                 Bukkit.getPluginManager().registerEvents(new SpawnProtect(), this);
                 getLogger().info("主城保护模块已开启");
             }
-            if (getConfig().getBoolean("Spawn.LockSpawn", true)) {
+            if (Config.getBoolean("Spawn.LockSpawn", true)) {
                 Bukkit.getPluginManager().registerEvents(new LockRespawn(), this);
                 getLogger().info("出生点锁定模块已开启");
             }
-            if (getConfig().getBoolean("Spawn.NoDamage", true)) {
+            if (Config.getBoolean("Spawn.NoDamage", true)) {
                 Bukkit.getPluginManager().registerEvents(new NoSpawnDamage(), this);
                 getLogger().info("主城伤害关闭模块已开启");
             }
