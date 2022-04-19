@@ -29,5 +29,5 @@ jobs:
       uses: actions/upload-artifact@v3
       if: success()
       with:
-        files: |
-          target/RenYuan-Core-*.jar
+        name: RenYuan-Core
+        path: target/RenYuan-Core-*.jar
