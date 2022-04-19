@@ -37,7 +37,7 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "dev"
-        prerelease: true
+        prerelease: false
         title: "RenYuan-Core 自动构建版本"
         files: |
           target/RenYuan-Core.jar
