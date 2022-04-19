@@ -6,7 +6,7 @@
 
     <groupId>com.renyuansurvival</groupId>
     <artifactId>RenYuan-Core</artifactId>
-    <version>2.1[ServerVersion1.3.1-Test]</version>
+    <version>2.1</version>
     <packaging>jar</packaging>
 
     <name>RenYuan Core</name>
