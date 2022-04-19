@@ -30,7 +30,7 @@ jobs:
       if: success()
       with:
         name: RenYuan-Core
-        path: target/RenYuan-Core-*.jar
+        path: target/RenYuan-Core.jar
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@v1.2.1
       if: success()
@@ -40,5 +40,5 @@ jobs:
         prerelease: true
         title: "RenYuan-Core 自动构建版本"
         files: |
-          target/RenYuan-Core-*.jar
+          target/RenYuan-Core.jar
         
