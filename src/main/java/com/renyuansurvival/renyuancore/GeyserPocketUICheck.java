@@ -31,9 +31,11 @@ public class GeyserPocketUICheck implements Listener {
             }
 
         }
-        if(config.getBoolean("GeyserFeature.SendClientName",false)){
+        if(config.getBoolean("GeyserFeature.SendClientInfo",false)){
             if (floodgate.isFloodgatePlayer(uuid)) {
                 Bukkit.getLogger().info("基岩版玩家 " + player.getName() + " 的UI模式为: " + floodgate.getPlayer(uuid).getUiProfile().toString());
+                Bukkit.getLogger().info("基岩版玩家 " + player.getName() + " 的客户端为: " + floodgate.getPlayer(uuid).getDeviceOs().toString());
+                Bukkit.getLogger().info("基岩版玩家 " + player.getName() + " 的版本为: " + floodgate.getPlayer(uuid).getVersion());
             }
         }
     }

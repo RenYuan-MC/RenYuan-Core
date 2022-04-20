@@ -76,8 +76,8 @@ GeyserPocketUICheck:
 
 #用于测试的一些功能
 GeyserFeature:
-  #是否在基岩版玩家加入服务器时向后台发送玩家的使用的客户端
-  SendClientName: false
+  #是否在基岩版玩家加入服务器时向后台发送玩家的客户端信息
+  SendClientInfo: false
 
 #主城相关
 Spawn:
