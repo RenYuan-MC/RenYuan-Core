@@ -9,8 +9,6 @@ import org.bukkit.event.inventory.InventoryType;
 public class LecternCrashFix implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     public void InventoryClickEvent(InventoryClickEvent event){
-        if(event.getInventory().getType().equals(InventoryType.LECTERN)){
-            event.setCancelled(true);
-        }
+        if(event.getInventory().getType().equals(InventoryType.LECTERN)) event.setCancelled(true);
     }
 }

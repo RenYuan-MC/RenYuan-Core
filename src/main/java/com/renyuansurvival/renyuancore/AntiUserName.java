@@ -1,6 +1,5 @@
 package com.renyuansurvival.renyuancore;
 
-import net.kyori.adventure.text.Component;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
@@ -13,7 +12,7 @@ public class AntiUserName implements Listener {
     public void onPlayerLogin(AsyncPlayerPreLoginEvent e) {
         String Prefix = FloodgateApi.getInstance().getPlayerPrefix();
         if (e.getName().startsWith(Prefix) && !FloodgateApi.getInstance().isFloodgatePlayer(e.getUniqueId())) {
-            e.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, Component.text("[AntiUserName]\n非法的基岩版玩家名称\n请非基岩版玩家名称不要以" + Prefix + "开头"));
+            e.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, "[AntiUserName]\n非法的基岩版玩家名称\n请非基岩版玩家名称不要以" + Prefix + "开头");
         }
     }
 }
