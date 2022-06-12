@@ -35,7 +35,6 @@ jobs:
       uses: marvinpinto/action-automatic-releases@v1.2.1
       if: success()
       with:
-        ref: ${{ github.event.pull_request.head.sha }}
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "dev"
         prerelease: false
