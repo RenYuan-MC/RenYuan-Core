@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.spawn;
+package com.renyuansurvival.renyuancore.command;
 
 import com.renyuansurvival.renyuancore.RenYuanCore;
 import org.bukkit.World;
@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class SetSpawn implements CommandExecutor {
+public class SetSpawnCommand implements CommandExecutor {
 
     private final FileConfiguration config = RenYuanCore.getPlugin().getConfig();
 

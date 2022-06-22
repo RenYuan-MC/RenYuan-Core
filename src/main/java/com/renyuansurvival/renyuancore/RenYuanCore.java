@@ -1,6 +1,7 @@
 package com.renyuansurvival.renyuancore;
 
 import com.renyuansurvival.renyuancore.command.RenYuanCommand;
+import com.renyuansurvival.renyuancore.command.SetSpawnCommand;
 import com.renyuansurvival.renyuancore.command.SpawnCommand;
 import com.renyuansurvival.renyuancore.geyser.GeyserPocketUICheck;
 import com.renyuansurvival.renyuancore.metrics.Metrics;
@@ -76,7 +77,7 @@ public final class RenYuanCore extends JavaPlugin {
                 getLogger().info("主城伤害关闭模块已开启");
             }
             requireNonNull(getCommand("spawn")).setExecutor(new SpawnCommand());
-            requireNonNull(getCommand("setspawn")).setExecutor(new SetSpawn());
+            requireNonNull(getCommand("setspawn")).setExecutor(new SetSpawnCommand());
             getLogger().info("主城指令已注册");
 
         }
