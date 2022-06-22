@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.spawn;
+package com.renyuansurvival.renyuancore.command;
 
 import com.renyuansurvival.renyuancore.RenYuanCore;
 import org.bukkit.command.Command;

@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore;
+package com.renyuansurvival.renyuancore.protect;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
