@@ -19,10 +19,10 @@ public class TpaMenuSend implements Listener {
             String teleportMessage = "未知的传送方式,来自" + fromPlayer.getName();
             switch (teleportMode){
                 case Tpa:
-                    teleportMessage = fromPlayer.getName() + " 想要传送到你这里";
+                    teleportMessage = fromPlayer.getName() + " 想要让他传送到你这里";
                     break;
                 case TpaHere:
-                    teleportMessage = fromPlayer.getName() + " 想要传送到他那里";
+                    teleportMessage = fromPlayer.getName() + " 想要让你传送到他那里";
                     break;
             }
             FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
