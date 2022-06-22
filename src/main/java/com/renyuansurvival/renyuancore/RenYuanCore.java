@@ -2,10 +2,13 @@ package com.renyuansurvival.renyuancore;
 
 import com.renyuansurvival.renyuancore.metrics.Metrics;
 import com.renyuansurvival.renyuancore.spawn.*;
+import com.renyuansurvival.renyuancore.tpa.CMISupport;
+import com.renyuansurvival.renyuancore.tpa.EssentialsSupport;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,11 +39,6 @@ public final class RenYuanCore extends JavaPlugin {
         if (Config.getBoolean("NotBoom.Enable", true)) {
             Bukkit.getPluginManager().registerEvents(new NotBoom(), this);
             getLogger().info("防爆模块已加载,魔改自Coby_Cola的NotBoom插件");
-        }
-
-        if (Config.getBoolean("AntiUserName.Enable", true)) {
-            Bukkit.getPluginManager().registerEvents(new AntiUserName(), this);
-            getLogger().info("基岩版玩家名称检测模块已加载");
         }
 
         if (Config.getBoolean("Metrics.Enable", true)) {
@@ -76,6 +74,22 @@ public final class RenYuanCore extends JavaPlugin {
             requireNonNull(getCommand("setspawn")).setExecutor(new SetSpawn());
             getLogger().info("主城指令已注册");
 
+        }
+        if(Bukkit.getPluginManager().getPlugin("floodgate") != null){
+            if (Config.getBoolean("AntiUserName.Enable", true)) {
+                Bukkit.getPluginManager().registerEvents(new AntiUserName(), this);
+                getLogger().info("基岩版玩家名称检测模块已加载");
+            }
+            if(Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null && Config.getBoolean("BedrockTpaMenu.Enable", true)){
+                if(Bukkit.getPluginManager().getPlugin("CMI") != null){
+                    Bukkit.getPluginManager().registerEvents(new CMISupport(), this);
+                    getLogger().info("基岩版tpa菜单-CMI兼容模块已加载");
+                }
+                if(Bukkit.getPluginManager().getPlugin("Essentials") != null){
+                    Bukkit.getPluginManager().registerEvents(new EssentialsSupport(), this);
+                    getLogger().info("基岩版tpa菜单-ESS兼容模块已加载");
+                }
+            }
         }
 
         getLogger().info("任渊生存服务端功能插件加载完毕,作者:RENaa_FD");

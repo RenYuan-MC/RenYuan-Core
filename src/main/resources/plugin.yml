@@ -1,7 +1,7 @@
 name: RenYuan-Core
 version: '${project.version}'
 main: com.renyuansurvival.renyuancore.RenYuanCore
-softdepend: [ floodgate , Multiverse-Core ]
+softdepend: [ floodgate , Multiverse-Core , Essentials , CMI , BEMenuAPI ]
 api-version: 1.17
 authors: [ RENaa_FD ]
 commands:
