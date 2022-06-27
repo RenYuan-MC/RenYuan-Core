@@ -11,6 +11,7 @@ import com.renyuansurvival.renyuancore.protect.NotBoom;
 import com.renyuansurvival.renyuancore.spawn.*;
 import com.renyuansurvival.renyuancore.tpa.CMISupport;
 import com.renyuansurvival.renyuancore.tpa.EssentialsSupport;
+import com.renyuansurvival.renyuancore.tpa.TpaMenuSend;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -89,6 +90,8 @@ public final class RenYuanCore extends JavaPlugin {
             }
 
             if(Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null && Config.getBoolean("BedrockTpaMenu.Enable", true)){
+                Bukkit.getPluginManager().registerEvents(new TpaMenuSend(), this);
+                getLogger().info("基岩版tpa菜单按钮监听模块已加载");
                 if(Bukkit.getPluginManager().getPlugin("CMI") != null){
                     Bukkit.getPluginManager().registerEvents(new CMISupport(), this);
                     getLogger().info("基岩版tpa菜单-CMI兼容模块已加载");
