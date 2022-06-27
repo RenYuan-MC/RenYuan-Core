@@ -31,6 +31,7 @@ NotBoom:
 #本服务端使用CStats来获取服务端使用统计
 #数据统计可以前往 http://cstats.iroselle.com/plugin/bukkit/RenYuan-Core 查看
 Metrics:
+  #是否启用
   Enable: true
 
 #基岩版玩家名称保护
@@ -46,11 +47,38 @@ AntiUserName:
 #此功能需要BEMenuAPI作为基岩版菜单前置
 #BEMenuAPI下载: https://github.com/zimzaza4/Skript-Floodgate-Form
 BedrockTpaMenu:
+  #是否启用
   Enable: true
+  #同意传送时发送的命令
+  AcceptCommand: "/tpaccept"
+  #拒绝传送时发送的命令
+  DenyCommand: "/tpdeny"
+  #发送菜单时的信息
+  Message:
+    #此处 %s 为玩家名
+    #Tpa时form菜单显示的信息
+    TpaInfo: "%s 想要让他传送到你这里"
+    #Tpahere时form菜单显示的信息
+    TpahereInfo: "%s 想要让你传送到他那里"
+    #未知的传送类型时form菜单显示的信息
+    UnknownTpInfo: "未知的传送方式,来自 %s"
+  #发送菜单时的选项配置
+  Form:
+    #发送的form菜单的标题
+    Title: "传送菜单"
+    #同意传送按钮显示的文字
+    AcceptButton: "同意传送"
+    #同意传送按钮显示的图标
+    AcceptIcon: "textures/ui/realms_green_check.png"
+    #拒绝传送按钮显示的文字
+    DenyButton: "拒绝传送"
+    #拒绝传送按钮显示的图标
+    DenyIcon: "textures/ui/realms_red_x.png"
 
 #启用防讲台崩服
 #如果你已经使用了具有类似效果的插件,可以关闭它
 LecternCrashFix:
+  #是否启用
   Enable: true
 
 #自定义插件所发送的信息

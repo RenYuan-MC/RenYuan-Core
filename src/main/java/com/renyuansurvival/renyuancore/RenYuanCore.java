@@ -58,11 +58,6 @@ public final class RenYuanCore extends JavaPlugin {
             getLogger().info("讲台崩服修复模块已开启");
         }
 
-        if (Config.getBoolean("GeyserPocketUICheck.Enable", true)) {
-            Bukkit.getPluginManager().registerEvents(new GeyserPocketUICheck(), this);
-            getLogger().info("基岩版PocketUI检测模块已开启");
-        }
-
         if (Config.getBoolean("Spawn.Enable", true)) {
             if (Config.getBoolean("Spawn.Protect", true)) {
                 Bukkit.getPluginManager().registerEvents(new SpawnProtect(), this);
@@ -82,10 +77,17 @@ public final class RenYuanCore extends JavaPlugin {
 
         }
         if(Bukkit.getPluginManager().getPlugin("floodgate") != null){
+
+            if (Config.getBoolean("GeyserPocketUICheck.Enable", false)) {
+                Bukkit.getPluginManager().registerEvents(new GeyserPocketUICheck(), this);
+                getLogger().info("基岩版PocketUI检测模块已开启");
+            }
+
             if (Config.getBoolean("AntiUserName.Enable", true)) {
                 Bukkit.getPluginManager().registerEvents(new AntiUserName(), this);
                 getLogger().info("基岩版玩家名称检测模块已加载");
             }
+
             if(Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null && Config.getBoolean("BedrockTpaMenu.Enable", true)){
                 if(Bukkit.getPluginManager().getPlugin("CMI") != null){
                     Bukkit.getPluginManager().registerEvents(new CMISupport(), this);
