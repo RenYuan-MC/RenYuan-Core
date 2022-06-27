@@ -50,9 +50,9 @@ BedrockTpaMenu:
   #是否启用
   Enable: true
   #同意传送时发送的命令
-  AcceptCommand: "/tpaccept"
+  AcceptCommand: "tpaccept"
   #拒绝传送时发送的命令
-  DenyCommand: "/tpdeny"
+  DenyCommand: "tpdeny"
   #发送菜单时的信息
   Message:
     #此处 %s 为玩家名

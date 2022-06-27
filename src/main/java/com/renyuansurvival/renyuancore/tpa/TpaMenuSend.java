@@ -46,10 +46,10 @@ public class TpaMenuSend implements Listener {
         if (event.getFormId().equals("RenYuan-Core_Tpa-Menu")){
             switch (event.getButtonID()){
                 case 0:
-                    Bukkit.dispatchCommand(player,config.getString("BedrockTpaMenu.AcceptCommand","/tpaccept"));
+                    Bukkit.dispatchCommand(player,config.getString("BedrockTpaMenu.AcceptCommand","tpaccept"));
                     break;
                 case 1:
-                    Bukkit.dispatchCommand(player,config.getString("BedrockTpaMenu.DenyCommand","/tpdeny"));
+                    Bukkit.dispatchCommand(player,config.getString("BedrockTpaMenu.DenyCommand","tpdeny"));
                     break;
             }
         }
