@@ -70,7 +70,7 @@ Message:
 #代码参考来自 https://github.com/zimzaza4/BedrockPocketUIWarn
 GeyserPocketUICheck:
   #是否启用
-  Enable: true
+  Enable: false
   #是否踢出玩家
   Kick:
     Enable: false
