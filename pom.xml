@@ -6,7 +6,7 @@
 
     <groupId>com.renyuansurvival</groupId>
     <artifactId>RenYuan-Core</artifactId>
-    <version>4.0</version>
+    <version>4.1</version>
     <packaging>jar</packaging>
 
     <name>RenYuan Core</name>
@@ -106,6 +106,13 @@
             <version>1.0.1</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/libs/BEMenuAPI.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.maxgamer</groupId>
+            <artifactId>QuickShop</artifactId>
+            <version>5.1.0.6</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/QuickShop-5.1.0.6.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

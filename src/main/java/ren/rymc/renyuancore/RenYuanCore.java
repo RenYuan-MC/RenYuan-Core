@@ -1,5 +1,7 @@
 package ren.rymc.renyuancore;
 
+import org.maxgamer.quickshop.api.QuickShopAPI;
+import ren.rymc.renyuancore.bedrockmenu.QuickShopMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.command.SetSpawnCommand;
 import ren.rymc.renyuancore.command.SpawnCommand;
@@ -58,7 +60,7 @@ public final class RenYuanCore extends JavaPlugin {
 
         if (Config.getBoolean("LecternCrashFix.Enable", true)) {
             Bukkit.getPluginManager().registerEvents(new LecternCrashFix(), this);
-            getLogger().info("讲台崩服修复模块已开启");
+            getLogger().info("讲台崩服修复模块已加载");
         }
 
         if (Config.getBoolean("Spawn.Enable", true)) {
@@ -68,11 +70,11 @@ public final class RenYuanCore extends JavaPlugin {
             }
             if (Config.getBoolean("Spawn.LockSpawn", true)) {
                 Bukkit.getPluginManager().registerEvents(new LockRespawn(), this);
-                getLogger().info("出生点锁定模块已开启");
+                getLogger().info("出生点锁定模块已加载");
             }
             if (Config.getBoolean("Spawn.NoDamage", true)) {
                 Bukkit.getPluginManager().registerEvents(new NoSpawnDamage(), this);
-                getLogger().info("主城伤害关闭模块已开启");
+                getLogger().info("主城伤害关闭模块已加载");
             }
             requireNonNull(getCommand("spawn")).setExecutor(new SpawnCommand());
             requireNonNull(getCommand("setspawn")).setExecutor(new SetSpawnCommand());
@@ -83,7 +85,7 @@ public final class RenYuanCore extends JavaPlugin {
 
             if (Config.getBoolean("GeyserPocketUICheck.Enable", false)) {
                 Bukkit.getPluginManager().registerEvents(new GeyserPocketUICheck(), this);
-                getLogger().info("基岩版PocketUI检测模块已开启");
+                getLogger().info("基岩版PocketUI检测模块已加载");
             }
 
             if (Config.getBoolean("AntiUserName.Enable", true)) {
@@ -102,6 +104,11 @@ public final class RenYuanCore extends JavaPlugin {
                     Bukkit.getPluginManager().registerEvents(new EssentialsSupport(), this);
                     getLogger().info("基岩版tpa菜单-ESS兼容模块已加载");
                 }
+            }
+
+            if(Bukkit.getPluginManager().getPlugin("QuickShop") != null && Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null){
+                Bukkit.getPluginManager().registerEvents(new QuickShopMenu(),this);
+                getLogger().info("基岩版QuickShop菜单模块已加载");
             }
         }
 
