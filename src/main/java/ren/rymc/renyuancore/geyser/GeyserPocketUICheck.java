@@ -1,6 +1,6 @@
-package com.renyuansurvival.renyuancore.geyser;
+package ren.rymc.renyuancore.geyser;
 
-import com.renyuansurvival.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanCore;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;

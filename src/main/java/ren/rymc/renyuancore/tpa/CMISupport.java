@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.tpa;
+package ren.rymc.renyuancore.tpa;
 
 import com.Zrips.CMI.events.CMIPlayerTeleportRequestEvent;
 import org.bukkit.event.EventHandler;

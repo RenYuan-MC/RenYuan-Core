@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.tpa;
+package ren.rymc.renyuancore.tpa;
 
 enum TeleportMode{
     TpaHere,

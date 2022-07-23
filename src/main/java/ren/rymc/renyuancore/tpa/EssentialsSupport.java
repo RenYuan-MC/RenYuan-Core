@@ -1,4 +1,4 @@
-package com.renyuansurvival.renyuancore.tpa;
+package ren.rymc.renyuancore.tpa;
 
 import net.ess3.api.events.TPARequestEvent;
 import org.bukkit.Bukkit;

@@ -1,23 +1,25 @@
-package com.renyuansurvival.renyuancore;
+package ren.rymc.renyuancore;
 
-import com.renyuansurvival.renyuancore.command.RenYuanCommand;
-import com.renyuansurvival.renyuancore.command.SetSpawnCommand;
-import com.renyuansurvival.renyuancore.command.SpawnCommand;
-import com.renyuansurvival.renyuancore.geyser.GeyserPocketUICheck;
-import com.renyuansurvival.renyuancore.metrics.Metrics;
-import com.renyuansurvival.renyuancore.protect.AntiUserName;
-import com.renyuansurvival.renyuancore.protect.LecternCrashFix;
-import com.renyuansurvival.renyuancore.protect.NotBoom;
-import com.renyuansurvival.renyuancore.spawn.*;
-import com.renyuansurvival.renyuancore.tpa.CMISupport;
-import com.renyuansurvival.renyuancore.tpa.EssentialsSupport;
-import com.renyuansurvival.renyuancore.tpa.TpaMenuSend;
+import ren.rymc.renyuancore.command.RenYuanCommand;
+import ren.rymc.renyuancore.command.SetSpawnCommand;
+import ren.rymc.renyuancore.command.SpawnCommand;
+import ren.rymc.renyuancore.geyser.GeyserPocketUICheck;
+import ren.rymc.renyuancore.metrics.Metrics;
+import ren.rymc.renyuancore.protect.AntiUserName;
+import ren.rymc.renyuancore.protect.LecternCrashFix;
+import ren.rymc.renyuancore.protect.NotBoom;
+import ren.rymc.renyuancore.spawn.LockRespawn;
+import ren.rymc.renyuancore.spawn.SpawnProtect;
+import ren.rymc.renyuancore.tpa.CMISupport;
+import ren.rymc.renyuancore.tpa.EssentialsSupport;
+import ren.rymc.renyuancore.tpa.TpaMenuSend;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import ren.rymc.renyuancore.spawn.NoSpawnDamage;
 
 import static java.util.Objects.requireNonNull;
 

@@ -1,6 +1,6 @@
-package com.renyuansurvival.renyuancore.spawn;
+package ren.rymc.renyuancore.spawn;
 
-import com.renyuansurvival.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanCore;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

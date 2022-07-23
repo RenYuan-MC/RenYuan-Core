@@ -1,6 +1,6 @@
-package com.renyuansurvival.renyuancore.tpa;
+package ren.rymc.renyuancore.tpa;
 
-import com.renyuansurvival.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanCore;
 import me.zimzaza4.LForm;
 import me.zimzaza4.SimpleFormClickEvent;
 import org.bukkit.Bukkit;

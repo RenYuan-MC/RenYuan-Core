@@ -1,6 +1,6 @@
-package com.renyuansurvival.renyuancore.command;
+package ren.rymc.renyuancore.command;
 
-import com.renyuansurvival.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanCore;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

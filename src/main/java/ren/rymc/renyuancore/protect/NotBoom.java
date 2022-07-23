@@ -1,6 +1,6 @@
-package com.renyuansurvival.renyuancore.protect;
+package ren.rymc.renyuancore.protect;
 
-import com.renyuansurvival.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanCore;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
