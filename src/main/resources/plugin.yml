@@ -1,9 +1,10 @@
 name: RenYuan-Core
 version: '${project.version}'
-main: com.renyuansurvival.renyuancore.RenYuanCore
+main: ren.rymc.renyuancore.RenYuanCore
 softdepend:
   - floodgate
   - Multiverse-Core
+  - QuickShop
   - Essentials
   - CMI
   - BEMenuAPI
