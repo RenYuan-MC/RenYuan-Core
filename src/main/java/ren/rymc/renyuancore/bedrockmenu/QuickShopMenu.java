@@ -61,9 +61,10 @@ public class QuickShopMenu implements Listener {
             if (action.equals(Action.RIGHT_CLICK_BLOCK)){
                 if (block.getType().equals(Material.CHEST) || block.getType().equals(Material.TRAPPED_CHEST)) return;
 
-                playerStorage.put(player,shop);
-
-                BEQuickShopSetting(player);
+                if (player.isOp() || shop.getOwner().equals(player.getUniqueId())) {
+                    playerStorage.put(player,shop);
+                    BEQuickShopSetting(player);
+                }
 
             }
             return;
