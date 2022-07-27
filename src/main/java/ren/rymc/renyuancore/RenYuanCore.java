@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import ren.rymc.renyuancore.bedrockmenu.QuickShopMenu;
+import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.command.SetSpawnCommand;
 import ren.rymc.renyuancore.command.SpawnCommand;
@@ -110,6 +111,12 @@ public final class RenYuanCore extends JavaPlugin {
                 Bukkit.getPluginManager().registerEvents(new QuickShopMenu(),this);
                 getLogger().info("基岩版QuickShop菜单模块已加载");
             }
+
+            if(Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null && Config.getBoolean("BedrockRespawnMenu.Enable", true)){
+                Bukkit.getPluginManager().registerEvents(new RespawnMenu(), this);
+                getLogger().info("基岩版死亡重生菜单模块已加载");
+            }
+
         }
         if(Bukkit.getPluginManager().getPlugin("Residence") != null){
             Bukkit.getPluginManager().registerEvents(new ResCreateLimit(),this);

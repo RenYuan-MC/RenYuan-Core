@@ -13,6 +13,7 @@ api-version: 1.17
 authors:
   - RENaa_FD
 website: https://rymc.ren/
+description: "任渊生存服务端功能核心插件"
 commands:
   spawn:
     description: "回主城"
