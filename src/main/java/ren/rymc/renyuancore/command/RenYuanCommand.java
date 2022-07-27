@@ -25,6 +25,7 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
             sender.sendMessage( RenYuanCore.getPrefix() + "/RenYuanCore reload all - 重载插件" );
             sender.sendMessage( RenYuanCore.getPrefix() + "/RenYuanCore ui <玩家名> - 获取基岩版玩家UI模式" );
         }else if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("renyuancore.reload")){
+            if(args.length != 2) return true;
             if(args[1].equalsIgnoreCase("config")){
                 RenYuanCore.reloadPluginConfig();
                 sender.sendMessage(RenYuanCore.getPrefix() + "配置文件已经重载(仅部分功能重载)");
