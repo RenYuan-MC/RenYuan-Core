@@ -1,6 +1,11 @@
 package ren.rymc.renyuancore;
 
-import org.maxgamer.quickshop.api.QuickShopAPI;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 import ren.rymc.renyuancore.bedrockmenu.QuickShopMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.command.SetSpawnCommand;
@@ -10,18 +15,13 @@ import ren.rymc.renyuancore.metrics.Metrics;
 import ren.rymc.renyuancore.protect.AntiUserName;
 import ren.rymc.renyuancore.protect.LecternCrashFix;
 import ren.rymc.renyuancore.protect.NotBoom;
+import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.LockRespawn;
+import ren.rymc.renyuancore.spawn.NoSpawnDamage;
 import ren.rymc.renyuancore.spawn.SpawnProtect;
 import ren.rymc.renyuancore.tpa.CMISupport;
 import ren.rymc.renyuancore.tpa.EssentialsSupport;
 import ren.rymc.renyuancore.tpa.TpaMenuSend;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.World;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.NotNull;
-import ren.rymc.renyuancore.spawn.NoSpawnDamage;
 
 import static java.util.Objects.requireNonNull;
 
@@ -110,6 +110,10 @@ public final class RenYuanCore extends JavaPlugin {
                 Bukkit.getPluginManager().registerEvents(new QuickShopMenu(),this);
                 getLogger().info("基岩版QuickShop菜单模块已加载");
             }
+        }
+        if(Bukkit.getPluginManager().getPlugin("Residence") != null){
+            Bukkit.getPluginManager().registerEvents(new ResCreateLimit(),this);
+            getLogger().info("领地圈地限制模块已加载");
         }
 
         getLogger().info("任渊生存服务端功能插件加载完毕,作者:RENaa_FD");

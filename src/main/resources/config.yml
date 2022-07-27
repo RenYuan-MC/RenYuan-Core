@@ -76,7 +76,7 @@ BedrockTpaMenu:
     DenyIcon: "textures/ui/realms_red_x.png"
 
 #启用防讲台崩服
-#如果你已经使用了具有类似效果的插件,可以关闭它
+#如果你已经使用了具有类似效果的插件或者服务器版本高于1.18.2,可以关闭它
 LecternCrashFix:
   #是否启用
   Enable: true
@@ -114,6 +114,12 @@ GeyserPocketUICheck:
 GeyserFeature:
   #是否在基岩版玩家加入服务器时向后台发送玩家的客户端信息
   SendClientInfo: false
+
+#禁止在某个世界圈地
+#此功能不会使/res tp此类命令在这个世界失效
+ResCreateLimit:
+  - otd_dungeon
+  - spawn
 
 #主城相关
 Spawn:

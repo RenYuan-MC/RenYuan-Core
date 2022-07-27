@@ -8,6 +8,7 @@ softdepend:
   - Essentials
   - CMI
   - BEMenuAPI
+  - Residence
 api-version: 1.17
 authors:
   - RENaa_FD
@@ -28,4 +29,7 @@ permissions:
     default: op
   spawn.set:
     description: "主城设置权限"
+    default: op
+  renyuancore.admin:
+    description: "任渊生存功能核心的主权限"
     default: op
