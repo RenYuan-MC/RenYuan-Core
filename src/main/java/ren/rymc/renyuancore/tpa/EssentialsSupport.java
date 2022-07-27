@@ -12,12 +12,7 @@ public class EssentialsSupport implements Listener {
     @EventHandler
     public void onPlayerTpa(TPARequestEvent event){
         Player player = Bukkit.getPlayer(event.getTarget().getUUID());
-        TeleportMode teleportMode;
-        if (event.isTeleportHere()){
-            teleportMode = TeleportMode.TpaHere;
-        }else{
-            teleportMode = TeleportMode.Tpa;
-        }
+        TeleportMode teleportMode = event.isTeleportHere() ? TeleportMode.TpaHere : TeleportMode.Tpa;
         if (player != null) TpaMenuSend.sendTpaMenu(player, event.getRequester().getPlayer(), teleportMode);
     }
 }
