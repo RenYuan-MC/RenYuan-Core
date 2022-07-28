@@ -1,6 +1,6 @@
 package ren.rymc.renyuancore.test;
 
-enum PlayerResourceStatus{
+public enum PlayerResourceStatus{
     Normal,
     Java,
     Bedrock,

@@ -24,7 +24,7 @@ import java.util.UUID;
 public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
 
     private final FloodgateApi floodgateApi = FloodgateApi.getInstance();
-    public final HashMap<Player,PlayerResourceStatus> ResStatus = new HashMap<>();
+    private static final HashMap<Player,PlayerResourceStatus> ResStatus = new HashMap<>();
     private final FileConfiguration config = RenYuanCore.getPlugin().getConfig();
 
     @Override
@@ -95,6 +95,10 @@ public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
         String url = config.getString("TestFeature.ResourceUrl","https://hub.fastgit.xyz/lRENyaaa/RYServerTexture/releases/download/v1.1/Pack.zip");
         String hash = config.getString("TestFeature.ResourceHash","2fa9b5326e064b24499edcf9569a3c466bd739ae");
         player.setResourcePack(url,hash);
+    }
+
+    public static PlayerResourceStatus getPlayerResourceStatus(Player player){
+        return ResStatus.get(player);
     }
 
 }
