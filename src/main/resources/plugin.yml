@@ -10,7 +10,6 @@ softdepend:
   - BEMenuAPI
   - Residence
   - ViaVersion
-  - ProtocolLib
 api-version: 1.17
 authors:
   - RENaa_FD

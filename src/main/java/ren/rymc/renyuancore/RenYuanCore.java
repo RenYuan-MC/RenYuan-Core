@@ -135,9 +135,6 @@ public final class RenYuanCore extends JavaPlugin {
                 getLogger().info("实验性内容-资源包加载指令已注册");
                 Bukkit.getPluginManager().registerEvents(new ResourceSender(), this);
                 getLogger().info("实验性内容-资源包监听模块已加载");
-                if(Config.getBoolean("TestFeature.ResourcePackSender",false) && Bukkit.getPluginManager().getPlugin("ProtocolLib") != null){
-                    getLogger().info("实验性内容-字符替换模块已加载");
-                }
             }
         }
 
