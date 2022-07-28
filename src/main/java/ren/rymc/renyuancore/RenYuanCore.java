@@ -20,6 +20,7 @@ import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.LockRespawn;
 import ren.rymc.renyuancore.spawn.NoSpawnDamage;
 import ren.rymc.renyuancore.spawn.SpawnProtect;
+import ren.rymc.renyuancore.test.ResourceSender;
 import ren.rymc.renyuancore.tpa.CMISupport;
 import ren.rymc.renyuancore.tpa.EssentialsSupport;
 import ren.rymc.renyuancore.tpa.TpaMenuSend;
@@ -121,6 +122,23 @@ public final class RenYuanCore extends JavaPlugin {
         if(Bukkit.getPluginManager().getPlugin("Residence") != null){
             Bukkit.getPluginManager().registerEvents(new ResCreateLimit(),this);
             getLogger().info("领地圈地限制模块已加载");
+        }
+        if(Config.getBoolean("TestFeature.Enable",false)){
+            getLogger().warning("你正在加载实验性内容,这些内容仍然在制作中,可能会出现未知的问题");
+            getLogger().warning("实验性功能Bug报告请前往: https://github.com/lRENyaaa/RenYuan-Core/issues");
+            if(Config.getBoolean("TestFeature.ResourcePackSender",false) && Bukkit.getPluginManager().getPlugin("ViaVersion") != null && Bukkit.getPluginManager().getPlugin("floodgate") != null){
+                if(Bukkit.getPluginManager().getPlugin("ItemsAdder") != null){
+                    getLogger().warning("检测到ItemsAdder,为确保兼容性,请使用ItemsAdder的资源包功能而不是RenYuan-Core的");
+                }
+                requireNonNull(getCommand("loadpack")).setExecutor(new ResourceSender());
+                requireNonNull(getCommand("loadpack")).setTabCompleter(new ResourceSender());
+                getLogger().info("实验性内容-资源包加载指令已注册");
+                Bukkit.getPluginManager().registerEvents(new ResourceSender(), this);
+                getLogger().info("实验性内容-资源包监听模块已加载");
+                if(Config.getBoolean("TestFeature.ResourcePackSender",false) && Bukkit.getPluginManager().getPlugin("ProtocolLib") != null){
+                    getLogger().info("实验性内容-字符替换模块已加载");
+                }
+            }
         }
 
         getLogger().info("任渊生存服务端功能插件加载完毕,作者:RENaa_FD");

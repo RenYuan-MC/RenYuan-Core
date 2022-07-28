@@ -9,6 +9,8 @@ softdepend:
   - CMI
   - BEMenuAPI
   - Residence
+  - ViaVersion
+  - ProtocolLib
 api-version: 1.17
 authors:
   - RENaa_FD
@@ -24,6 +26,9 @@ commands:
   renyuancore:
     description: "任渊功能插件相关指令"
     usage: "/renyuancore help"
+  loadpack:
+    description: "加载资源包"
+    usage: "/loadpack"
 permissions:
   spawn.build:
     description: "主城建筑权限"
