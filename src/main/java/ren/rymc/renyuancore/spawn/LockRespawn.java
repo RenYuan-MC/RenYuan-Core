@@ -1,5 +1,6 @@
 package ren.rymc.renyuancore.spawn;
 
+import ren.rymc.renyuancore.RenYuanAPI;
 import ren.rymc.renyuancore.RenYuanCore;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -9,6 +10,6 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 public class LockRespawn implements Listener {
     @EventHandler( priority = EventPriority.HIGHEST )
     public void PlayerRespawnEvent(PlayerRespawnEvent event) {
-        event.setRespawnLocation(RenYuanCore.getSpawnLocation());
+        event.setRespawnLocation(RenYuanAPI.getSpawnLocation());
     }
 }

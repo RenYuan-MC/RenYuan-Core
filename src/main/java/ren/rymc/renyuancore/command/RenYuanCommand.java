@@ -1,6 +1,5 @@
 package ren.rymc.renyuancore.command;
 
-import ren.rymc.renyuancore.RenYuanCore;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,6 +8,7 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.geysermc.floodgate.api.FloodgateApi;
 import org.jetbrains.annotations.NotNull;
+import ren.rymc.renyuancore.RenYuanAPI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
         if (args.length == 0 || args[0].equalsIgnoreCase("help")){
-            RenYuanCore.sendMessage(sender,
+            RenYuanAPI.sendMessage(sender,
                     "任渊生存服务端-帮助",
                     "/RenYuanCore help - 获取帮助",
                     "/RenYuanCore reload config - 重载配置文件",
@@ -30,11 +30,11 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
         }else if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("renyuancore.reload")){
             if(args.length != 2) return true;
             if(args[1].equalsIgnoreCase("config")){
-                RenYuanCore.reloadPluginConfig();
-                RenYuanCore.sendMessage(sender, "配置文件已经重载(仅部分功能重载)");
+                RenYuanAPI.reloadPluginConfig();
+                RenYuanAPI.sendMessage(sender, "配置文件已经重载(仅部分功能重载)");
             }else if(args[1].equalsIgnoreCase("all")) {
-                RenYuanCore.reloadPlugin();
-                RenYuanCore.sendMessage(sender,
+                RenYuanAPI.reloadPlugin();
+                RenYuanAPI.sendMessage(sender,
                         "插件已经完成重载",
                         "这个功能仍未完成,仅能开启部分未开启的模块,也不受支持",
                         "如需要彻底重载请重启服务器"
@@ -45,10 +45,10 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
             UUID uuid = player.getUniqueId();
             FloodgateApi floodgate = FloodgateApi.getInstance();
             if(floodgate.isFloodgatePlayer(uuid)){
-                RenYuanCore.sendMessage(sender, "基岩版玩家" + args[1] + "的UI模式为:" + floodgate.getPlayer(uuid).getUiProfile().toString());
+                RenYuanAPI.sendMessage(sender, "基岩版玩家" + args[1] + "的UI模式为:" + floodgate.getPlayer(uuid).getUiProfile().toString());
             }
         }else{
-            RenYuanCore.sendMessage(sender, "请使用/RenYuanCore help获取帮助");
+            RenYuanAPI.sendMessage(sender, "请使用/RenYuanCore help获取帮助");
         }
         return true;
     }

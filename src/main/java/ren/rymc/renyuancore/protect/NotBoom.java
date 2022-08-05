@@ -1,5 +1,6 @@
 package ren.rymc.renyuancore.protect;
 
+import ren.rymc.renyuancore.RenYuanAPI;
 import ren.rymc.renyuancore.RenYuanCore;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
@@ -11,7 +12,7 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 
 public class NotBoom implements Listener {
 
-    private final FileConfiguration config = RenYuanCore.getPlugin().getConfig();
+    private final FileConfiguration config = RenYuanAPI.getPlugin().getConfig();
 
     @EventHandler
     private void NotBoomMain(EntityExplodeEvent event) {

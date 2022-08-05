@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerResourcePackStatusEvent;
 import org.geysermc.floodgate.api.FloodgateApi;
 import org.jetbrains.annotations.NotNull;
-import ren.rymc.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanAPI;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,7 +25,7 @@ public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
 
     private final FloodgateApi floodgateApi = FloodgateApi.getInstance();
     private static final HashMap<Player,PlayerResourceStatus> ResStatus = new HashMap<>();
-    private final FileConfiguration config = RenYuanCore.getPlugin().getConfig();
+    private final FileConfiguration config = RenYuanAPI.getPlugin().getConfig();
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
@@ -33,11 +33,11 @@ public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
         Player player = ((Player) sender);
         UUID uuid = player.getUniqueId();
         if(floodgateApi.isFloodgatePlayer(uuid)) {
-            RenYuanCore.sendMessage(player,"基岩版玩家不能使用此功能");
+            RenYuanAPI.sendMessage(player,"基岩版玩家不能使用此功能");
             return true;
         }
         if(Via.getAPI().getPlayerVersion(uuid) < 498){
-            RenYuanCore.sendMessage(player,"你的游戏版本过低,不支持此功能");
+            RenYuanAPI.sendMessage(player,"你的游戏版本过低,不支持此功能");
             return true;
         }
         sendResource(player);
@@ -63,9 +63,9 @@ public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
         if(status.equals(PlayerResourcePackStatusEvent.Status.SUCCESSFULLY_LOADED)){
             ResStatus.put(player,PlayerResourceStatus.Java);
         }else if(status.equals(PlayerResourcePackStatusEvent.Status.DECLINED)){
-            RenYuanCore.sendMessage(player, "服务器资源包加载被禁用", "请将服务器列表中§c编辑§f页面的§c服务器资源包§f选项设置为启用");
+            RenYuanAPI.sendMessage(player, "服务器资源包加载被禁用", "请将服务器列表中§c编辑§f页面的§c服务器资源包§f选项设置为启用");
         }else if(status.equals(PlayerResourcePackStatusEvent.Status.FAILED_DOWNLOAD)){
-            RenYuanCore.sendMessage(player, "§e服务器资源包下载失败,可能的解决方法如下:", "1.换一条线路", "2.检查你是否能访问hub.fastgit.xyz", "3.询问管理");
+            RenYuanAPI.sendMessage(player, "§e服务器资源包下载失败,可能的解决方法如下:", "1.换一条线路", "2.检查你是否能访问hub.fastgit.xyz", "3.询问管理");
         }
     }
 
