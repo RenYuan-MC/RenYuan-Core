@@ -1,9 +1,12 @@
 package ren.rymc.renyuancore;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import ren.rymc.renyuancore.bedrockmenu.QuickShopMenu;
@@ -20,6 +23,7 @@ import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.LockRespawn;
 import ren.rymc.renyuancore.spawn.NoSpawnDamage;
 import ren.rymc.renyuancore.spawn.SpawnProtect;
+import ren.rymc.renyuancore.test.PlayerResourceStatus;
 import ren.rymc.renyuancore.test.ResourceSender;
 import ren.rymc.renyuancore.tpa.CMISupport;
 import ren.rymc.renyuancore.tpa.EssentialsSupport;
@@ -188,6 +192,18 @@ public final class RenYuanCore extends JavaPlugin {
             world = Bukkit.getWorld("world");
         }
         SpawnLocation = new Location(world, Config.getDouble("Spawn.X", 59.5), Config.getDouble("Spawn.Y", 105.0), Config.getDouble("Spawn.Z", -148.5), 0.0F, 0.0F);
+    }
+
+    public static void sendMessage(CommandSender player, String message){
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPrefix() + message));
+    }
+
+    public static void sendMessage(CommandSender player, String... messages){
+        for (String message : messages ) sendMessage(player,message);
+    }
+
+    public static PlayerResourceStatus getPlayerResourceStatus(Player player){
+        return ResourceSender.getPlayerResourceStatus(player);
     }
 
     public static void refreshPrefix(){

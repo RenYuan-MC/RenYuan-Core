@@ -20,7 +20,7 @@ public class ResCreateLimit implements Listener {
 
         for (String worldName : config.getStringList("ResCreateLimit")){
             if (world.getName().equals(worldName)) {
-                player.sendMessage(RenYuanCore.getPrefix() + "你不可以在这个世界圈地!");
+                RenYuanCore.sendMessage(player, "你不可以在这个世界圈地!");
                 event.setCancelled(true);
             }
         }

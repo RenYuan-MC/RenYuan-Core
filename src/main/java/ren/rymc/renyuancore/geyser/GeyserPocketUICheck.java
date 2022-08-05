@@ -28,7 +28,7 @@ public class GeyserPocketUICheck implements Listener {
             if (config.getBoolean("GeyserPocketUICheck.Kick.Enable",false)) {
                 event.disallow(PlayerLoginEvent.Result.KICK_OTHER, Component.text(config.getString("GeyserPocketUICheck.Kick.Message","请将设置选项视频中的UI档案设置为经典")));
             }else if (config.getBoolean("GeyserPocketUICheck.SendMessage.Enable",true)){
-                player.sendMessage(RenYuanCore.getPrefix() + config.getString("GeyserPocketUICheck.SendMessage.Message","服务器不能完美兼容PocketUI,请将设置选项视频中的UI档案设置为经典以提升你的游戏体验"));
+                RenYuanCore.sendMessage(player, config.getString("GeyserPocketUICheck.SendMessage.Message","服务器不能完美兼容PocketUI,请将设置选项视频中的UI档案设置为经典以提升你的游戏体验"));
             }
 
         }

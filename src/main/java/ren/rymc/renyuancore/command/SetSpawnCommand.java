@@ -1,5 +1,6 @@
 package ren.rymc.renyuancore.command;
 
+import org.bukkit.Location;
 import ren.rymc.renyuancore.RenYuanCore;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -15,21 +16,29 @@ public class SetSpawnCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
-        if(sender instanceof Player) {
-            if(sender.hasPermission("spawn.set")) {
-                double X = ((Player) sender).getLocation().getBlockX() + 0.5;
-                double Y = ((Player) sender).getLocation().getBlockY();
-                double Z = ((Player) sender).getLocation().getBlockZ() + 0.5;
-                World world = ((Player) sender).getWorld();
-                sender.sendMessage(RenYuanCore.getPrefix() + "World:" + world.getName() + "  X:" + X + "  Y:" + Y + "  Z:" + Z);
-                RenYuanCore.setSpawnLocation(world,X,Y,Z);
-                sender.sendMessage(RenYuanCore.getPrefix() + config.getString("Message.SetSpawn", "已设置主城位置"));
-            }else{
-                sender.sendMessage(RenYuanCore.getPrefix() + config.getString("Message.NoPerMission","你没有权限"));
-            }
-        }else{
-            sender.sendMessage(RenYuanCore.getPrefix() + config.getString("Message.PlayerCommand","仅玩家可执行该命令"));
+        if(!(sender instanceof Player)) {
+            RenYuanCore.sendMessage(sender, config.getString("Message.PlayerCommand","仅玩家可执行该命令"));
+            return true;
         }
+
+        if(sender.hasPermission("spawn.set")) {
+            RenYuanCore.sendMessage(sender, config.getString("Message.NoPerMission","你没有权限"));
+            return true;
+        }
+
+        Player player = ((Player) sender);
+        Location location = player.getLocation();
+
+        double X = location.getBlockX() + 0.5;
+        double Y = location.getBlockY();
+        double Z = location.getBlockZ() + 0.5;
+
+        World world = player.getWorld();
+
+        RenYuanCore.sendMessage(sender, "World:" + world.getName() + "  X:" + X + "  Y:" + Y + "  Z:" + Z);
+        RenYuanCore.setSpawnLocation(world,X,Y,Z);
+        RenYuanCore.sendMessage(sender, config.getString("Message.SetSpawn", "已设置主城位置"));
+
         return true;
     }
 }

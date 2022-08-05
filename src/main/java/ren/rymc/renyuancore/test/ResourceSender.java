@@ -34,10 +34,11 @@ public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
         UUID uuid = player.getUniqueId();
         if(floodgateApi.isFloodgatePlayer(uuid)) {
             player.sendMessage(RenYuanCore.getPrefix() + "基岩版玩家不能使用此功能");
+            RenYuanCore.sendMessage(player,"基岩版玩家不能使用此功能");
             return true;
         }
         if(Via.getAPI().getPlayerVersion(uuid) < 498){
-            player.sendMessage(RenYuanCore.getPrefix() + "你的游戏版本过低,不支持此功能");
+            RenYuanCore.sendMessage(player,"你的游戏版本过低,不支持此功能");
             return true;
         }
         sendResource(player);
@@ -63,13 +64,9 @@ public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
         if(status.equals(PlayerResourcePackStatusEvent.Status.SUCCESSFULLY_LOADED)){
             ResStatus.put(player,PlayerResourceStatus.Java);
         }else if(status.equals(PlayerResourcePackStatusEvent.Status.DECLINED)){
-            player.sendMessage(RenYuanCore.getPrefix() + "服务器资源包加载被禁用");
-            player.sendMessage(RenYuanCore.getPrefix() + "请将服务器列表中§c编辑§f页面的§c服务器资源包§f选项设置为启用");
+            RenYuanCore.sendMessage(player, "服务器资源包加载被禁用", "请将服务器列表中§c编辑§f页面的§c服务器资源包§f选项设置为启用");
         }else if(status.equals(PlayerResourcePackStatusEvent.Status.FAILED_DOWNLOAD)){
-            player.sendMessage(RenYuanCore.getPrefix() + "§e服务器资源包下载失败,可能的解决方法如下:");
-            player.sendMessage(RenYuanCore.getPrefix() + "1.换一条线路");
-            player.sendMessage(RenYuanCore.getPrefix() + "2.检查你是否能访问hub.fastgit.xyz");
-            player.sendMessage(RenYuanCore.getPrefix() + "3.询问管理");
+            RenYuanCore.sendMessage(player, "§e服务器资源包下载失败,可能的解决方法如下:", "1.换一条线路", "2.检查你是否能访问hub.fastgit.xyz", "3.询问管理");
         }
     }
 
