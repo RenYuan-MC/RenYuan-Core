@@ -10,13 +10,13 @@ import org.bukkit.event.hanging.HangingBreakByEntityEvent;
 import org.bukkit.event.hanging.HangingPlaceEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
 import org.bukkit.event.player.PlayerBucketFillEvent;
-import ren.rymc.renyuancore.RenYuanAPI;
+import ren.rymc.renyuancore.RenYuanCoreAPI;
 
 import java.util.Objects;
 
 public class SpawnProtect implements Listener {
 
-    private final String worldName = RenYuanAPI.getSpawnWorldName();
+    private final String worldName = RenYuanCoreAPI.getSpawnWorldName();
 
     @EventHandler( priority = EventPriority.HIGHEST )
     public void HangingBreakByEntityEvent(HangingBreakByEntityEvent event) {

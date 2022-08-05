@@ -36,8 +36,8 @@ public final class RenYuanCore extends JavaPlugin {
         plugin = this;
         FileConfiguration config = getPlugin().getConfig();
 
-        RenYuanAPI.refreshPrefix();
-        RenYuanAPI.refreshSpawnLocation();
+        RenYuanCoreAPI.refreshPrefix();
+        RenYuanCoreAPI.refreshSpawnLocation();
 
         requireNonNull(getCommand("renyuancore")).setExecutor(new RenYuanCommand());
         requireNonNull(getCommand("renyuancore")).setTabCompleter(new RenYuanCommand());

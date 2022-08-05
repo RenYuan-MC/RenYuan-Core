@@ -1,7 +1,6 @@
 package ren.rymc.renyuancore.tpa;
 
-import ren.rymc.renyuancore.RenYuanAPI;
-import ren.rymc.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanCoreAPI;
 import me.zimzaza4.LForm;
 import me.zimzaza4.SimpleFormClickEvent;
 import org.bukkit.Bukkit;
@@ -17,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class TpaMenuSend implements Listener {
 
-    private static final FileConfiguration config = RenYuanAPI.getConfig();
+    private static final FileConfiguration config = RenYuanCoreAPI.getConfig();
 
     public static void sendTpaMenu(@NotNull Player player,@NotNull Player fromPlayer,@NotNull TeleportMode teleportMode) {
         if(FloodgateApi.getInstance().isFloodgatePlayer(player.getUniqueId())){

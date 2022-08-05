@@ -12,7 +12,7 @@ import org.geysermc.cumulus.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.floodgate.api.FloodgateApi;
 import org.geysermc.floodgate.api.player.FloodgatePlayer;
-import ren.rymc.renyuancore.RenYuanAPI;
+import ren.rymc.renyuancore.RenYuanCoreAPI;
 
 import java.util.UUID;
 
@@ -27,7 +27,7 @@ public class RespawnMenu implements Listener {
             public void run(){
                 SendRespawnMenu(event.getPlayer());
             }
-        }.runTaskLater(RenYuanAPI.getPlugin(),20L);
+        }.runTaskLater(RenYuanCoreAPI.getPlugin(),20L);
     }
 
     private void SendRespawnMenu(Player player){

@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import ren.rymc.renyuancore.test.PlayerResourceStatus;
 import ren.rymc.renyuancore.test.ResourceSender;
 
-public class RenYuanAPI {
+public class RenYuanCoreAPI {
 
     private static String prefix;
     private static Location spawnLocation;

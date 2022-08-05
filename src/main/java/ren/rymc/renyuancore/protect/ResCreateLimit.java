@@ -6,8 +6,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import ren.rymc.renyuancore.RenYuanAPI;
-import ren.rymc.renyuancore.RenYuanCore;
+import ren.rymc.renyuancore.RenYuanCoreAPI;
 
 public class ResCreateLimit implements Listener {
 
@@ -17,11 +16,11 @@ public class ResCreateLimit implements Listener {
         if (player.hasPermission("renyuancore.admin")) return;
 
         World world = event.getPhysicalArea().getWorld();
-        FileConfiguration config = RenYuanAPI.getPlugin().getConfig();
+        FileConfiguration config = RenYuanCoreAPI.getPlugin().getConfig();
 
         for (String worldName : config.getStringList("ResCreateLimit")){
             if (world.getName().equals(worldName)) {
-                RenYuanAPI.sendMessage(player, "你不可以在这个世界圈地!");
+                RenYuanCoreAPI.sendMessage(player, "你不可以在这个世界圈地!");
                 event.setCancelled(true);
             }
         }
