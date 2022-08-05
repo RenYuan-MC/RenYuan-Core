@@ -33,7 +33,6 @@ public class ResourceSender implements CommandExecutor, TabExecutor, Listener {
         Player player = ((Player) sender);
         UUID uuid = player.getUniqueId();
         if(floodgateApi.isFloodgatePlayer(uuid)) {
-            player.sendMessage(RenYuanCore.getPrefix() + "基岩版玩家不能使用此功能");
             RenYuanCore.sendMessage(player,"基岩版玩家不能使用此功能");
             return true;
         }
