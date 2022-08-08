@@ -89,7 +89,7 @@ public final class RenYuanCore extends JavaPlugin {
                 getLogger().info("基岩版玩家名称检测模块已加载");
             }
 
-            if(Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null && config.getBoolean("BedrockTpaMenu.Enable", true)){
+            if(config.getBoolean("BedrockTpaMenu.Enable", true)){
                 Bukkit.getPluginManager().registerEvents(new TpaMenuSend(), this);
                 getLogger().info("基岩版tpa菜单按钮监听模块已加载");
                 if(Bukkit.getPluginManager().getPlugin("CMI") != null){
@@ -102,12 +102,12 @@ public final class RenYuanCore extends JavaPlugin {
                 }
             }
 
-            if(Bukkit.getPluginManager().getPlugin("QuickShop") != null && Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null){
+            if(Bukkit.getPluginManager().getPlugin("QuickShop") != null){
                 Bukkit.getPluginManager().registerEvents(new QuickShopMenu(),this);
                 getLogger().info("基岩版QuickShop菜单模块已加载");
             }
 
-            if(Bukkit.getPluginManager().getPlugin("BEMenuAPI") != null && config.getBoolean("BedrockRespawnMenu.Enable", true)){
+            if(config.getBoolean("BedrockRespawnMenu.Enable", true)){
                 Bukkit.getPluginManager().registerEvents(new RespawnMenu(), this);
                 getLogger().info("基岩版死亡重生菜单模块已加载");
             }

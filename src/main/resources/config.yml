@@ -44,8 +44,6 @@ AntiUserName:
 #基岩版玩家Tpa菜单
 #此功能只支持ESS和CMI,不支持Sunlight等其他基础插件
 #此功能可以让你在输入tpa指令后的对方收到对应传送菜单
-#此功能需要BEMenuAPI作为基岩版菜单前置
-#BEMenuAPI下载: https://github.com/zimzaza4/Skript-Floodgate-Form
 BedrockTpaMenu:
   #是否启用
   Enable: true
@@ -76,8 +74,6 @@ BedrockTpaMenu:
     DenyIcon: "textures/ui/realms_red_x.png"
 
 #基岩版玩家死亡重生时的菜单
-#此功能需要BEMenuAPI作为基岩版菜单前置
-#BEMenuAPI下载: https://github.com/zimzaza4/Skript-Floodgate-Form
 BedrockRespawnMenu:
   Enable: true
 

@@ -105,13 +105,6 @@
             <systemPath>${project.basedir}/libs/CMI9.0.0.0-api.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>me.zimzaza4.NB</groupId>
-            <artifactId>BEMenuAPI</artifactId>
-            <version>1.0.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/BEMenuAPI.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>org.maxgamer</groupId>
             <artifactId>QuickShop</artifactId>
             <version>5.1.0.6</version>
