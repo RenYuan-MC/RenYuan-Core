@@ -21,7 +21,7 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
 
         if (args.length == 0 || args[0].equalsIgnoreCase("help")){
             RenYuanCoreAPI.sendMessage(sender,
-                    "任渊生存服务端-帮助(RenYuan-Core 5.1.1)",
+                    "任渊生存服务端-帮助(RenYuan-Core 5.2.2)",
                     "/RenYuanCore help - 获取帮助",
                     "/RenYuanCore reload config - 重载配置文件",
                     "/RenYuanCore reload all - 重载插件",
