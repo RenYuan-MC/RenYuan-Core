@@ -1,4 +1,4 @@
-package ren.rymc.renyuancore.test;
+package ren.rymc.renyuancore.resource;
 
 import com.viaversion.viaversion.api.Via;
 import org.bukkit.command.Command;

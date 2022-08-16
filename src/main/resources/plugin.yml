@@ -17,16 +17,19 @@ description: "任渊生存服务端功能核心插件"
 commands:
   spawn:
     description: "回主城"
-    usage: "/spawn"
+    usage: ""
   setspawn:
     description: "设置主城"
-    usage: "/setspawn"
+    usage: ""
   renyuancore:
     description: "任渊功能插件相关指令"
-    usage: "/renyuancore help"
+    usage: ""
   loadpack:
     description: "加载资源包"
-    usage: "/loadpack"
+    usage: ""
+  obemenu:
+    description: "基岩版菜单"
+    usage: ""
 permissions:
   spawn.build:
     description: "主城建筑权限"

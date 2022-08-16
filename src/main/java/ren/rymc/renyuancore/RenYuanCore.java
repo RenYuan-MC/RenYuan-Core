@@ -3,6 +3,7 @@ package ren.rymc.renyuancore;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import ren.rymc.renyuancore.bedrockmenu.MainMenu;
 import ren.rymc.renyuancore.bedrockmenu.QuickShopMenu;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
@@ -17,7 +18,7 @@ import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.LockRespawn;
 import ren.rymc.renyuancore.spawn.NoSpawnDamage;
 import ren.rymc.renyuancore.spawn.SpawnProtect;
-import ren.rymc.renyuancore.test.ResourceSender;
+import ren.rymc.renyuancore.resource.ResourceSender;
 import ren.rymc.renyuancore.tpa.CMISupport;
 import ren.rymc.renyuancore.tpa.EssentialsSupport;
 import ren.rymc.renyuancore.tpa.TpaMenuSend;
@@ -118,8 +119,8 @@ public final class RenYuanCore extends JavaPlugin {
             getLogger().info("领地圈地限制模块已加载");
         }
         if(config.getBoolean("TestFeature.Enable",false)){
-            getLogger().warning("你正在加载实验性内容,这些内容仍然在制作中,可能会出现未知的问题");
-            getLogger().warning("实验性功能Bug报告请前往: https://github.com/lRENyaaa/RenYuan-Core/issues");
+            getLogger().info("你正在加载实验性内容,这些内容仍然在制作中,可能会出现未知的问题");
+            getLogger().info("实验性功能Bug报告请前往: https://github.com/RenYuan-MC/RYSurvival/issues");
             if(config.getBoolean("TestFeature.ResourcePackSender",false) && Bukkit.getPluginManager().getPlugin("ViaVersion") != null && Bukkit.getPluginManager().getPlugin("floodgate") != null){
                 if(Bukkit.getPluginManager().getPlugin("ItemsAdder") != null){
                     getLogger().warning("检测到ItemsAdder,为确保兼容性,请使用ItemsAdder的资源包功能而不是RenYuan-Core的");
@@ -129,6 +130,11 @@ public final class RenYuanCore extends JavaPlugin {
                 getLogger().info("实验性内容-资源包加载指令已注册");
                 Bukkit.getPluginManager().registerEvents(new ResourceSender(), this);
                 getLogger().info("实验性内容-资源包监听模块已加载");
+            }
+            if(config.getBoolean("TestFeature.BEMainMenu",false) && Bukkit.getPluginManager().getPlugin("floodgate") != null){
+                requireNonNull(getCommand("obemenu")).setExecutor(new MainMenu());
+                Bukkit.getPluginManager().registerEvents(new MainMenu(), this);
+                getLogger().info("实验性内容-基岩版玩家菜单已加载");
             }
         }
 

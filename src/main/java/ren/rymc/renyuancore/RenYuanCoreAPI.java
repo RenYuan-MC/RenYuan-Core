@@ -8,8 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import ren.rymc.renyuancore.test.PlayerResourceStatus;
-import ren.rymc.renyuancore.test.ResourceSender;
+import ren.rymc.renyuancore.resource.PlayerResourceStatus;
+import ren.rymc.renyuancore.resource.ResourceSender;
 
 public class RenYuanCoreAPI {
 
