@@ -21,7 +21,7 @@ public class SetSpawnCommand implements CommandExecutor {
             return true;
         }
 
-        if(sender.hasPermission("spawn.set")) {
+        if(!sender.hasPermission("spawn.set")) {
             RenYuanCoreAPI.sendMessage(sender, config.getString("Message.NoPerMission","你没有权限"));
             return true;
         }
