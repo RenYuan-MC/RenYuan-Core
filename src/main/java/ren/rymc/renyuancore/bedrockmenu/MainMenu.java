@@ -25,7 +25,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("传送")
-                .input("请输入你要传送的玩家(不需要完整名称)", "&7RENaa");
+                .input("请输入你要传送的玩家(不需要完整名称)", "§7RENaa");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_TeleportMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -34,7 +34,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("传送")
-                .input("请输入你要传送的玩家(不需要完整名称)", "&7RENaa");
+                .input("请输入你要传送的玩家(不需要完整名称)", "§7RENaa");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_TeleportHereMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -43,7 +43,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("领地选区(正方体)")
-                .input("请输入领地选区半径", "&72");
+                .input("请输入领地选区半径", "§72");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_SquareSelectMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -52,7 +52,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("创建领地")
-                .input("请输入你要创建的领地名称", "&7abc123-_");
+                .input("请输入你要创建的领地名称", "§7abc123-_");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResEndCreateMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -61,7 +61,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("添加领地信任玩家")
-                .input("请输入你要添加的玩家(完整名称)", "&7BE_RENaaLR");
+                .input("请输入你要添加的玩家(完整名称)", "§7BE_RENaaLR");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResPaddMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -70,7 +70,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("删除领地信任玩家")
-                .input("请输入你要删除的玩家(完整名称)", "&7BE_RENaaLR");
+                .input("请输入你要删除的玩家(完整名称)", "§7BE_RENaaLR");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResPdelMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -79,7 +79,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("扩展领地")
-                .input("请面朝你要扩展的方向输入扩展大小", "&710");
+                .input("请面朝你要扩展的方向输入扩展大小", "§710");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResExpandMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -88,7 +88,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("删除领地")
-                .input("请输入你要删除的领地名称(不填则是你所在的领地)", "&7abc123-_");
+                .input("请输入你要删除的领地名称(不填则是你所在的领地)", "§7abc123-_");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResRemoveMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -97,7 +97,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("设置领地公共权限")
-                .input("请输入你要设置的领地名称(不填则是你所在的领地)", "&7abc123-_");
+                .input("请输入你要设置的领地名称(不填则是你所在的领地)", "§7abc123-_");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResSetMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -106,7 +106,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("设置领地玩家权限")
-                .input("请输入你要设置权限的玩家名称(完整名称)", "&7BE_RENaaLR");
+                .input("请输入你要设置权限的玩家名称(完整名称)", "§7BE_RENaaLR");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResPsetMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -115,7 +115,7 @@ public class MainMenu implements Listener, CommandExecutor {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         CustomForm.Builder menu = CustomForm.builder()
                 .title("领地传送")
-                .input("请输入你要传送的领地(完整名称)", "&7abc123-_");
+                .input("请输入你要传送的领地(完整名称)", "§7abc123-_");
         LForm.CustomListener(player, menu, "RenYuan-BEMenu_ResTeleportMenu");
         floodgatePlayer.sendForm(menu);
     }
@@ -123,7 +123,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendMainMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&e&l主菜单")
+                .title("§e§l主菜单")
                 .content("主菜单")
                 .button("世界传送菜单", FormImage.Type.PATH, "textures/ui/arrow_dark_right_stretch.png")
                 .button("玩家传送菜单", FormImage.Type.PATH, "textures/items/ender_pearl.png")
@@ -138,7 +138,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendWorldTeleportMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l世界传送")
+                .title("§l世界传送")
                 .content("世界传送")
                 .button("生存世界随机传送", FormImage.Type.PATH, "textures/blocks/grass_path_side.png")
                 .button("地狱世界随机传送", FormImage.Type.PATH, "textures/blocks/netherrack.png")
@@ -152,7 +152,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendPlayerTeleportMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l玩家传送")
+                .title("§l玩家传送")
                 .content("玩家传送")
                 .button("传送到别的玩家", FormImage.Type.PATH, "textures/ui/arrow_dark_right.png")
                 .button("让别的玩家传送到这", FormImage.Type.PATH, "textures/ui/arrow_dark_left_stretch.png")
@@ -166,7 +166,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendHomeMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l家管理")
+                .title("§l家管理")
                 .content("家管理")
                 .button("传送到你的家", FormImage.Type.PATH, "textures/ui/arrow_dark_right_stretch.png")
                 .button("将当前位置设置为家", FormImage.Type.PATH, "textures/blocks/planks_oak.png");
@@ -177,7 +177,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendSettingMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l功能菜单")
+                .title("§l功能菜单")
                 .content("功能菜单")
                 .button("开关计分板", FormImage.Type.PATH, "textures/items/apple.png")
                 .button("开关技能状态显示栏", FormImage.Type.PATH, "textures/items/apple_golden.png");
@@ -188,7 +188,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendPlayingMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l玩法菜单")
+                .title("§l玩法菜单")
                 .content("玩法菜单")
                 .button("获取粘液科技指南", FormImage.Type.PATH, "textures/items/book_enchanted.png")
                 .button("打开技能菜单", FormImage.Type.PATH, "textures/items/diamond_axe.png")
@@ -200,7 +200,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendResidenceMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l领地菜单")
+                .title("§l领地菜单")
                 .content("领地菜单")
                 .button("领地创建菜单", FormImage.Type.PATH, "textures/items/clock_item.png")
                 .button("领地管理菜单", FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png")
@@ -215,7 +215,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendResCreateMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l领地创建菜单")
+                .title("§l领地创建菜单")
                 .content("领地创建菜单")
                 .button("选区(正方体)", FormImage.Type.PATH, "textures/items/wood_hoe.png")
                 .button("选区(自动)", FormImage.Type.PATH, "textures/items/stone_hoe.png")
@@ -229,7 +229,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendResManagerMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l领地管理菜单")
+                .title("§l领地管理菜单")
                 .content("请站在你自己领地里使用")
                 .button("添加信任玩家", FormImage.Type.PATH, "textures/ui/book_addpicture_hover.png")
                 .button("删除信任玩家", FormImage.Type.PATH, "textures/ui/realms_red_x.png")
@@ -242,7 +242,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendResConfirmMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l你确定?")
+                .title("§l你确定?")
                 .content("删除后不可恢复")
                 .button("确定", FormImage.Type.PATH, "textures/ui/realms_green_check.png");
         LForm.SimpleListener(player, menu, "RenYuan-BEMenu_ResConfirmMenu");
@@ -252,7 +252,7 @@ public class MainMenu implements Listener, CommandExecutor {
     private void sendResExtraMenu(Player player){
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         SimpleForm.Builder menu = SimpleForm.builder()
-                .title("&l领地管理-高级功能").content("高级功能")
+                .title("§l领地管理-高级功能").content("高级功能")
                 .button("设置领地公共权限", FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png")
                 .button("设置领地玩家权限", FormImage.Type.PATH,  "textures/ui/settings_glyph_color_2x.png");
         LForm.SimpleListener(player, menu, "RenYuan-BEMenu_ResExtraMenu");

@@ -6,7 +6,7 @@
 
     <groupId>com.renyuansurvival</groupId>
     <artifactId>RenYuan-Core</artifactId>
-    <version>5.3.0</version>
+    <version>5.4.0</version>
     <packaging>jar</packaging>
 
     <name>RenYuan Core</name>
@@ -31,7 +31,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -39,7 +39,13 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <relocations>
+                                <relocation>
+                                    <pattern>net.wesjd.anvilgui</pattern>
+                                    <shadedPattern>ren.rymc.anvilgui</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <minimizeJar>false</minimizeJar>
                         </configuration>
                     </execution>
                 </executions>
@@ -73,6 +79,10 @@
         <repository>
             <id>viaversion-repo</id>
             <url>https://repo.viaversion.com</url>
+        </repository>
+        <repository>
+            <id>codemc-snapshots</id>
+            <url>https://repo.codemc.io/repository/maven-snapshots/</url>
         </repository>
     </repositories>
 
@@ -123,6 +133,11 @@
             <artifactId>viaversion-api</artifactId>
             <version>LATEST</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.wesjd</groupId>
+            <artifactId>anvilgui</artifactId>
+            <version>1.5.3-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
