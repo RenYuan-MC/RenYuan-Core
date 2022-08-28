@@ -1,6 +1,6 @@
 name: RenYuan-Core
 version: '${project.version}'
-main: ren.rymc.renyuancore.RenYuanCore
+main: ren.rymc.renyuancore.main.RenYuanCore
 softdepend:
   - floodgate
   - Multiverse-Core
@@ -13,7 +13,7 @@ api-version: 1.17
 authors:
   - RENaa_FD
 website: https://rymc.ren/
-description: "任渊生存服务端功能核心插件"
+description: "任渊生存服务端功能核心插件 - V6"
 commands:
   spawn:
     description: "回主城"
@@ -24,11 +24,11 @@ commands:
   renyuancore:
     description: "任渊功能插件相关指令"
     usage: ""
+  renyuan-core:
+    description: "任渊功能插件相关指令"
+    usage: ""
   loadpack:
     description: "加载资源包"
-    usage: ""
-  obemenu:
-    description: "基岩版菜单"
     usage: ""
 permissions:
   spawn.build:

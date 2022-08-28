@@ -1,85 +1,81 @@
 package ren.rymc.renyuancore;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import ren.rymc.renyuancore.resource.PlayerResourceStatus;
-import ren.rymc.renyuancore.resource.ResourceSender;
+import ren.rymc.renyuancore.feature.resource.PlayerResourceStatus;
+import ren.rymc.renyuancore.main.RenYuanCore;
 
+@Deprecated
 public class RenYuanCoreAPI {
 
-    private static String prefix;
-    private static Location spawnLocation;
-
+    @Deprecated
     public static RenYuanCore getPlugin() {
-        return RenYuanCore.getPlugin();
+        return RenYuanCore.getAPI().getInstance();
     }
 
-    public static String getPrefix() {
-        return prefix;
+    @Deprecated
+    public static String getPrefix(){
+        return RenYuanCore.getAPI().getPrefix();
     }
 
-    public static Location getSpawnLocation() {
-        return spawnLocation;
+    @Deprecated
+    public static Location getSpawnLocation(){
+        return RenYuanCore.getAPI().getSpawnAPI().getSpawnLocation();
     }
 
+    @Deprecated
     public static void setSpawnLocation(@NotNull World world, double X, double Y, double Z) {
-        getConfig().set("Spawn.World",world.getName());
-        getConfig().set("Spawn.X",X);
-        getConfig().set("Spawn.Y",Y);
-        getConfig().set("Spawn.Z",Z);
-        getPlugin().saveConfig();
-        refreshSpawnLocation();
+        RenYuanCore.getAPI().getSpawnAPI().setSpawnLocation(world,X,Y,Z,0.0F,0.0F);
     }
 
+    @Deprecated
     public static void reloadPlugin(){
-        reloadPluginConfig();
-        getPlugin().onDisable();
-        getPlugin().onLoad();
-        getPlugin().onEnable();
+        RenYuanCore.getAPI().reloadPlugin(false);
     }
 
+    @Deprecated
     public static void reloadPluginConfig(){
-        getPlugin().reloadConfig();
-        refreshSpawnLocation();
-        refreshPrefix();
+        RenYuanCore.getAPI().reloadPluginConfig();
     }
 
+    @Deprecated
     public static void refreshSpawnLocation(){
-        World world = Bukkit.getWorld(getConfig().getString("Spawn.World", "spawn"));
-        if(world == null){
-            getPlugin().getLogger().warning("未检测到主城世界名称,已使用主世界代替");
-            world = Bukkit.getWorld("world");
-        }
-        spawnLocation = new Location(world, getConfig().getDouble("Spawn.X", 59.5), getConfig().getDouble("Spawn.Y", 105.0), getConfig().getDouble("Spawn.Z", -148.5), 0.0F, 0.0F);
+        RenYuanCore.getAPI().getSpawnAPI().refreshSpawnLocation();
     }
 
+    @Deprecated
     public static void sendMessage(CommandSender player, String message){
-        player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPrefix() + message));
+        RenYuanCore.getAPI().sendMessage(player,message);
     }
 
+    @Deprecated
     public static void sendMessage(CommandSender player, String... messages){
-        for (String message : messages ) sendMessage(player,message);
+        RenYuanCore.getAPI().sendMessage(player,messages);
     }
 
+    @Deprecated
     public static PlayerResourceStatus getPlayerResourceStatus(Player player){
-        return ResourceSender.getPlayerResourceStatus(player);
+        return RenYuanCore.getAPI().getPlayerResourceStatus(player);
     }
 
+    @Deprecated
     public static void refreshPrefix(){
-        prefix = getConfig().getString("Message.Prefix", "§f[§6服务器§f] ");
+        RenYuanCore.getAPI().refreshPrefix();
     }
 
+    @Deprecated
     public static FileConfiguration getConfig(){
         return getPlugin().getConfig();
     }
 
+    @Deprecated
     public static String getSpawnWorldName(){
-        return spawnLocation.getWorld().getName();
+        return RenYuanCore.getAPI().getSpawnAPI().getSpawnWorldName();
     }
+
+
 }
