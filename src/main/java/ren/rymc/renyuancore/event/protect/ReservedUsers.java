@@ -21,7 +21,7 @@ public class ReservedUsers implements Listener {
         playerList = config.getStringList("protect.reserved-users.list");
     }
 
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void PlayerInteractEvent(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         for (String playerName : playerList){

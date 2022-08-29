@@ -13,7 +13,7 @@ public class LecternCrashFix implements Listener {
         RenYuanCore.getAPI().getInstance().getLogger().info("防讲台崩服 已加载");
     }
 
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler( priority = EventPriority.HIGHEST )
     public void InventoryClickEvent(InventoryClickEvent event){
         if(event.getInventory().getType().equals(InventoryType.LECTERN)) event.setCancelled(true);
     }

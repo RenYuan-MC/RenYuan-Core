@@ -1,6 +1,7 @@
 package ren.rymc.renyuancore.event.protect;
 
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.geysermc.floodgate.api.FloodgateApi;
@@ -11,7 +12,7 @@ public class AntiUserName implements Listener {
         RenYuanCore.getAPI().getInstance().getLogger().info("基岩版玩家名称检测 已加载");
     }
 
-    @EventHandler
+    @EventHandler( priority = EventPriority.LOWEST )
     public void onPlayerLogin(PlayerLoginEvent event) {
         String prefix = FloodgateApi.getInstance().getPlayerPrefix();
         if (event.getPlayer().getName().startsWith(prefix) && !FloodgateApi.getInstance().isFloodgatePlayer(event.getPlayer().getUniqueId())) {
