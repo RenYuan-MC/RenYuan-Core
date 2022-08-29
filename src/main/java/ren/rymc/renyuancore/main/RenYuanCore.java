@@ -47,7 +47,7 @@ public final class RenYuanCore extends JavaPlugin implements RenYuanAPI {
         } else {
             refreshPrefix();
             loadModules();
-            registerMainCommand(getCommand("ren/rymc/renyuancore"));
+            registerMainCommand(getCommand("renyuancore"));
             registerMainCommand(getCommand("renyuan-core"));
         }
         getLogger().info("任渊生存服务端功能核心 RenYuan-Core 6.0.0 Dev 已完成加载 作者RENaa_FD");
