@@ -3,6 +3,7 @@ package ren.rymc.renyuancore.event.protect;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockExplodeEvent;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
@@ -18,7 +19,7 @@ public class NotBoom implements Listener {
         plugin.getLogger().info("防爆(魔改自Coby_Cola的NotBoom插件) 已加载");
     }
 
-    @EventHandler
+    @EventHandler( priority = EventPriority.HIGHEST )
     private void NotBoomMain(EntityExplodeEvent event) {
 
         EntityType type = event.getEntity().getType();
@@ -42,14 +43,14 @@ public class NotBoom implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler( priority = EventPriority.HIGHEST )
     private void WitherDestroy(EntityChangeBlockEvent event) {
         if (event.getEntity().getType() == EntityType.WITHER) {
             event.setCancelled(config.getBoolean("protect.not-boom.wither-destroy",true));
         }
     }
 
-    @EventHandler
+    @EventHandler( priority = EventPriority.HIGHEST )
     public void BlockExplode(BlockExplodeEvent event){
         event.setCancelled(config.getBoolean("protect.not-boom.block-explode",true));
     }
