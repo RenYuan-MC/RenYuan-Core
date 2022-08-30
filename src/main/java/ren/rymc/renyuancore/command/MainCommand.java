@@ -19,9 +19,9 @@ public class MainCommand implements CommandExecutor, TabExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
-        if (args.length == 0) return sendHelp(sender);
+        if (args.length == 0) return sendHelp(sender,"/" + command.getName());
         String arg0 = args[0].toLowerCase(Locale.ROOT);
-        if (arg0.equals("help")) return sendHelp(sender);
+        if (arg0.equals("help")) return sendHelp(sender,"/" + command.getName());
         if (arg0.equals("reload") && args.length > 1) return reloadPlugin(sender,args[1]);
         if (arg0.equals("ui") && args.length > 1) return sendUI(sender,args[1]);
         RenYuanCore.getAPI().sendMessage(sender, "请使用/RenYuanCore help获取帮助");
@@ -49,13 +49,13 @@ public class MainCommand implements CommandExecutor, TabExecutor {
         return null;
     }
 
-    private boolean sendHelp(CommandSender sender){
+    private boolean sendHelp(CommandSender sender,String command){
         RenYuanCore.getAPI().sendMessage(sender,
                 "任渊生存服务端 RenYuan-Core 6.0.0 Dev 帮助",
-                "/RenYuanCore help - 获取帮助",
-                "/RenYuanCore reload config - 重载配置文件",
-                "/RenYuanCore reload all - 重载插件",
-                "/RenYuanCore ui <玩家名> - 获取基岩版玩家UI模式"
+                command + " help - 获取帮助",
+                command + " reload config - 重载配置文件",
+                command + " reload all - 重载插件",
+                command + " ui <玩家名> - 获取基岩版玩家UI模式"
         );
         return true;
     }
