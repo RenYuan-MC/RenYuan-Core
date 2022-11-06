@@ -11,7 +11,7 @@ public class NoSpawnDamage implements Listener {
 
     @EventHandler( priority = EventPriority.HIGHEST )
     public void EntityDamageEvent(EntityDamageEvent event) {
-        if (event.getEntity() instanceof Player && event.getEntity().getWorld().getName().contains(RenYuanCoreAPI.getPlugin().getConfig().getString("Spawn.World", "spawn")) && event.getDamage() < 3E38) {
+        if (event.getEntity() instanceof Player && event.getEntity().getWorld().getName().equals(RenYuanCoreAPI.getPlugin().getConfig().getString("Spawn.World", "spawn")) && event.getDamage() < 3E38 && !event.getCause().equals(EntityDamageEvent.DamageCause.VOID)) {
             event.setCancelled(true);
         }
     }

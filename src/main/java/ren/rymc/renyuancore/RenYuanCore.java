@@ -10,12 +10,10 @@ import ren.rymc.renyuancore.command.SetSpawnCommand;
 import ren.rymc.renyuancore.command.SpawnCommand;
 import ren.rymc.renyuancore.geyser.GeyserPocketUICheck;
 import ren.rymc.renyuancore.protect.AntiUserName;
-import ren.rymc.renyuancore.protect.LecternCrashFix;
 import ren.rymc.renyuancore.protect.NotBoom;
 import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.LockRespawn;
 import ren.rymc.renyuancore.spawn.NoSpawnDamage;
-import ren.rymc.renyuancore.spawn.SpawnProtect;
 
 import static java.util.Objects.requireNonNull;
 
@@ -47,19 +45,9 @@ public final class RenYuanCore extends JavaPlugin {
             new ren.rymc.renyuancore.cstats.Metrics(this);
             new ren.rymc.renyuancore.bstats.Metrics(this,16814);
             getLogger().info("服务端数据统计模块已加载");
-
-        }
-
-        if (config.getBoolean("LecternCrashFix.Enable", true)) {
-            Bukkit.getPluginManager().registerEvents(new LecternCrashFix(), this);
-            getLogger().info("讲台崩服修复模块已加载");
         }
 
         if (config.getBoolean("Spawn.Enable", true)) {
-            if (config.getBoolean("Spawn.Protect", true)) {
-                Bukkit.getPluginManager().registerEvents(new SpawnProtect(), this);
-                getLogger().info("主城保护模块已开启");
-            }
             if (config.getBoolean("Spawn.LockSpawn", true)) {
                 Bukkit.getPluginManager().registerEvents(new LockRespawn(), this);
                 getLogger().info("出生点锁定模块已加载");

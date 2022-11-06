@@ -24,9 +24,6 @@ commands:
   renyuancore:
     description: "任渊功能插件相关指令"
     usage: ""
-  loadpack:
-    description: "加载资源包"
-    usage: ""
   obemenu:
     description: "基岩版菜单"
     usage: ""
