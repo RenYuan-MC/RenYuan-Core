@@ -41,38 +41,6 @@ Metrics:
 AntiUserName:
   Enable: true
 
-#基岩版玩家Tpa菜单
-#此功能只支持ESS和CMI,不支持Sunlight等其他基础插件
-#此功能可以让你在输入tpa指令后的对方收到对应传送菜单
-BedrockTpaMenu:
-  #是否启用
-  Enable: true
-  #同意传送时发送的命令
-  AcceptCommand: "tpaccept"
-  #拒绝传送时发送的命令
-  DenyCommand: "tpdeny"
-  #发送菜单时的信息
-  Message:
-    #此处 %s 为玩家名
-    #Tpa时form菜单显示的信息
-    TpaInfo: "%s 想要让他传送到你这里"
-    #Tpahere时form菜单显示的信息
-    TpahereInfo: "%s 想要让你传送到他那里"
-    #未知的传送类型时form菜单显示的信息
-    UnknownTpInfo: "未知的传送方式,来自 %s"
-  #发送菜单时的选项配置
-  Form:
-    #发送的form菜单的标题
-    Title: "传送菜单"
-    #同意传送按钮显示的文字
-    AcceptButton: "同意传送"
-    #同意传送按钮显示的图标
-    AcceptIcon: "textures/ui/realms_green_check.png"
-    #拒绝传送按钮显示的文字
-    DenyButton: "拒绝传送"
-    #拒绝传送按钮显示的图标
-    DenyIcon: "textures/ui/realms_red_x.png"
-
 #基岩版玩家死亡重生时的菜单
 BedrockRespawnMenu:
   Enable: true
