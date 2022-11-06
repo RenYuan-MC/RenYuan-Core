@@ -1,16 +1,19 @@
 package ren.rymc.renyuancore;
 
+import com.Zrips.CMI.utils.SpawnUtil;
+import com.earth2me.essentials.IEssentials;
+import com.earth2me.essentials.spawn.EssentialsSpawn;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.jetbrains.annotations.NotNull;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+
 public class RenYuanCoreAPI {
 
     private static String prefix;
-    private static Location spawnLocation;
 
     public static RenYuanCore getPlugin() {
         return RenYuanCore.getPlugin();
@@ -20,18 +23,29 @@ public class RenYuanCoreAPI {
         return prefix;
     }
 
-    public static Location getSpawnLocation() {
-        return spawnLocation;
+    public static Plugin getPlugin(String plugin) {
+        return Bukkit.getPluginManager().getPlugin(plugin);
     }
 
-    public static void setSpawnLocation(@NotNull World world, double X, double Y, double Z) {
-        getConfig().set("Spawn.World",world.getName());
-        getConfig().set("Spawn.X",X);
-        getConfig().set("Spawn.Y",Y);
-        getConfig().set("Spawn.Z",Z);
-        getPlugin().saveConfig();
-        refreshSpawnLocation();
+    public static Location getSpawnLocation(Player player) {
+        Location spawn = getESSSpawnLocation(player);
+        if(spawn == null) spawn = getCMISpawnLocation(player);
+        return spawn;
     }
+
+    public static Location getESSSpawnLocation(Player player) {
+        if (getPlugin("EssentialsSpawn") == null || getPlugin("Essentials") == null) return null;
+        EssentialsSpawn essSpawn = (EssentialsSpawn) getPlugin("EssentialsSpawn");
+        IEssentials ess = (IEssentials) getPlugin("Essentials");
+        if (essSpawn == null || ess == null) return null;
+        return essSpawn.getSpawn(ess.getUser(player).getGroup());
+    }
+
+    public static Location getCMISpawnLocation(Player player){
+        if (getPlugin("CMI") == null || getPlugin("CMILib") == null) return null;
+        return SpawnUtil.getSpawnPoint(player);
+    }
+
 
     public static void reloadPlugin(){
         reloadPluginConfig();
@@ -42,18 +56,9 @@ public class RenYuanCoreAPI {
 
     public static void reloadPluginConfig(){
         getPlugin().reloadConfig();
-        refreshSpawnLocation();
         refreshPrefix();
     }
 
-    public static void refreshSpawnLocation(){
-        World world = Bukkit.getWorld(getConfig().getString("Spawn.World", "spawn"));
-        if(world == null){
-            getPlugin().getLogger().warning("未检测到主城世界名称,已使用主世界代替");
-            world = Bukkit.getWorld("world");
-        }
-        spawnLocation = new Location(world, getConfig().getDouble("Spawn.X", 59.5), getConfig().getDouble("Spawn.Y", 105.0), getConfig().getDouble("Spawn.Z", -148.5), 0.0F, 0.0F);
-    }
 
     public static void sendMessage(CommandSender player, String message){
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPrefix() + message));
@@ -71,7 +76,4 @@ public class RenYuanCoreAPI {
         return getPlugin().getConfig();
     }
 
-    public static String getSpawnWorldName(){
-        return spawnLocation.getWorld().getName();
-    }
 }

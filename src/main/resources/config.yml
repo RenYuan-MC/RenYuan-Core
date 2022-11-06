@@ -92,17 +92,7 @@ ResCreateLimit:
   - otd_dungeon
   - spawn
 
-#主城相关
-Spawn:
-  #是否启用,如果你已经安装了相似功能的主城插件可以关闭
+#主城扩展,主城无伤害,虚空返回主城
+SpawnExtension:
+  #是否启用
   Enable: true
-  #是否关闭主城伤害,除了kill以外所有伤害将会被全部禁用,包括虚空
-  NoDamage: true
-  #是否锁定出生点,每次重生都会回到主城而不是这个世界的出生点
-  LockSpawn: true
-  #主城的世界名
-  World: "spawn"
-  #主城坐标
-  X: 79.5
-  Y: 105.0
-  Z: -148.5

@@ -6,14 +6,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ren.rymc.renyuancore.bedrockmenu.MainMenu;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
-import ren.rymc.renyuancore.command.SetSpawnCommand;
-import ren.rymc.renyuancore.command.SpawnCommand;
 import ren.rymc.renyuancore.geyser.GeyserPocketUICheck;
 import ren.rymc.renyuancore.protect.AntiUserName;
 import ren.rymc.renyuancore.protect.NotBoom;
 import ren.rymc.renyuancore.protect.ResCreateLimit;
-import ren.rymc.renyuancore.spawn.LockRespawn;
-import ren.rymc.renyuancore.spawn.NoSpawnDamage;
+import ren.rymc.renyuancore.spawn.SpawnExtension;
 
 import static java.util.Objects.requireNonNull;
 
@@ -30,7 +27,6 @@ public final class RenYuanCore extends JavaPlugin {
         FileConfiguration config = getPlugin().getConfig();
 
         RenYuanCoreAPI.refreshPrefix();
-        RenYuanCoreAPI.refreshSpawnLocation();
 
         requireNonNull(getCommand("renyuancore")).setExecutor(new RenYuanCommand());
         requireNonNull(getCommand("renyuancore")).setTabCompleter(new RenYuanCommand());
@@ -47,18 +43,9 @@ public final class RenYuanCore extends JavaPlugin {
             getLogger().info("服务端数据统计模块已加载");
         }
 
-        if (config.getBoolean("Spawn.Enable", true)) {
-            if (config.getBoolean("Spawn.LockSpawn", true)) {
-                Bukkit.getPluginManager().registerEvents(new LockRespawn(), this);
-                getLogger().info("出生点锁定模块已加载");
-            }
-            if (config.getBoolean("Spawn.NoDamage", true)) {
-                Bukkit.getPluginManager().registerEvents(new NoSpawnDamage(), this);
-                getLogger().info("主城伤害关闭模块已加载");
-            }
-            requireNonNull(getCommand("spawn")).setExecutor(new SpawnCommand());
-            requireNonNull(getCommand("setspawn")).setExecutor(new SetSpawnCommand());
-            getLogger().info("主城指令已注册");
+        if (config.getBoolean("SpawnExtension.Enable", true)) {
+            Bukkit.getPluginManager().registerEvents(new SpawnExtension(), this);
+            getLogger().info("主城扩展模块已加载");
 
         }
         if(Bukkit.getPluginManager().getPlugin("floodgate") != null){
