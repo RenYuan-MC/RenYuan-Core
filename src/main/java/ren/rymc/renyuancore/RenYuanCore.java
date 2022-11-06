@@ -9,7 +9,6 @@ import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.command.SetSpawnCommand;
 import ren.rymc.renyuancore.command.SpawnCommand;
 import ren.rymc.renyuancore.geyser.GeyserPocketUICheck;
-import ren.rymc.renyuancore.metrics.Metrics;
 import ren.rymc.renyuancore.protect.AntiUserName;
 import ren.rymc.renyuancore.protect.LecternCrashFix;
 import ren.rymc.renyuancore.protect.NotBoom;
@@ -46,9 +45,10 @@ public final class RenYuanCore extends JavaPlugin {
         }
 
         if (config.getBoolean("Metrics.Enable", true)) {
-            Metrics metrics = new Metrics(this);
-            metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
+            new ren.rymc.renyuancore.cstats.Metrics(this);
+            new ren.rymc.renyuancore.bstats.Metrics(this,16814);
             getLogger().info("服务端数据统计模块已加载");
+
         }
 
         if (config.getBoolean("LecternCrashFix.Enable", true)) {

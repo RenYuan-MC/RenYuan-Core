@@ -1,4 +1,4 @@
-package ren.rymc.renyuancore.metrics;
+package ren.rymc.renyuancore.cstats;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
