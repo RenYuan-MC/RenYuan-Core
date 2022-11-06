@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ren.rymc.renyuancore.bedrockmenu.MainMenu;
-import ren.rymc.renyuancore.bedrockmenu.QuickShopMenu;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.command.SetSpawnCommand;
@@ -19,9 +18,6 @@ import ren.rymc.renyuancore.spawn.LockRespawn;
 import ren.rymc.renyuancore.spawn.NoSpawnDamage;
 import ren.rymc.renyuancore.spawn.SpawnProtect;
 import ren.rymc.renyuancore.resource.ResourceSender;
-import ren.rymc.renyuancore.tpa.CMISupport;
-import ren.rymc.renyuancore.tpa.EssentialsSupport;
-import ren.rymc.renyuancore.tpa.TpaMenuSend;
 
 import static java.util.Objects.requireNonNull;
 
@@ -88,24 +84,6 @@ public final class RenYuanCore extends JavaPlugin {
             if (config.getBoolean("AntiUserName.Enable", true)) {
                 Bukkit.getPluginManager().registerEvents(new AntiUserName(), this);
                 getLogger().info("基岩版玩家名称检测模块已加载");
-            }
-
-            if(config.getBoolean("BedrockTpaMenu.Enable", true)){
-                Bukkit.getPluginManager().registerEvents(new TpaMenuSend(), this);
-                getLogger().info("基岩版tpa菜单按钮监听模块已加载");
-                if(Bukkit.getPluginManager().getPlugin("CMI") != null){
-                    Bukkit.getPluginManager().registerEvents(new CMISupport(), this);
-                    getLogger().info("基岩版tpa菜单-CMI兼容模块已加载");
-                }
-                if(Bukkit.getPluginManager().getPlugin("Essentials") != null){
-                    Bukkit.getPluginManager().registerEvents(new EssentialsSupport(), this);
-                    getLogger().info("基岩版tpa菜单-ESS兼容模块已加载");
-                }
-            }
-
-            if(Bukkit.getPluginManager().getPlugin("QuickShop") != null){
-                Bukkit.getPluginManager().registerEvents(new QuickShopMenu(),this);
-                getLogger().info("基岩版QuickShop菜单模块已加载");
             }
 
             if(config.getBoolean("BedrockRespawnMenu.Enable", true)){
