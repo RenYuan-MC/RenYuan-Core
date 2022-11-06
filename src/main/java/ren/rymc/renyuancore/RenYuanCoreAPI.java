@@ -6,11 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import ren.rymc.renyuancore.resource.PlayerResourceStatus;
-import ren.rymc.renyuancore.resource.ResourceSender;
-
 public class RenYuanCoreAPI {
 
     private static String prefix;
@@ -65,10 +61,6 @@ public class RenYuanCoreAPI {
 
     public static void sendMessage(CommandSender player, String... messages){
         for (String message : messages ) sendMessage(player,message);
-    }
-
-    public static PlayerResourceStatus getPlayerResourceStatus(Player player){
-        return ResourceSender.getPlayerResourceStatus(player);
     }
 
     public static void refreshPrefix(){
