@@ -45,12 +45,6 @@ AntiUserName:
 BedrockRespawnMenu:
   Enable: true
 
-#启用防讲台崩服
-#如果你已经使用了具有类似效果的插件或者服务器版本高于1.18.2,可以关闭它
-LecternCrashFix:
-  #是否启用
-  Enable: true
-
 #自定义插件所发送的信息
 Message:
   #发送信息时的前缀
@@ -79,11 +73,6 @@ GeyserPocketUICheck:
     Enable: true
     #向玩家发送的信息
     Message: "服务器不能完美兼容PocketUI,请将设置选项视频中的UI档案设置为经典以提升你的游戏体验"
-
-#用于测试的一些功能
-GeyserFeature:
-  #是否在基岩版玩家加入服务器时向后台发送玩家的客户端信息
-  SendClientInfo: false
 
 
 #禁止在某个世界圈地

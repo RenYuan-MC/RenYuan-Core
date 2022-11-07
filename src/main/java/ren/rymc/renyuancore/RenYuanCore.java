@@ -3,7 +3,6 @@ package ren.rymc.renyuancore;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import ren.rymc.renyuancore.bedrockmenu.MainMenu;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.geyser.GeyserPocketUICheck;
@@ -69,13 +68,6 @@ public final class RenYuanCore extends JavaPlugin {
         if(Bukkit.getPluginManager().getPlugin("Residence") != null){
             Bukkit.getPluginManager().registerEvents(new ResCreateLimit(),this);
             getLogger().info("领地圈地限制模块已加载");
-        }
-        if(config.getBoolean("TestFeature.Enable",false)){
-            if(config.getBoolean("TestFeature.BEMainMenu",false) && Bukkit.getPluginManager().getPlugin("floodgate") != null){
-                requireNonNull(getCommand("obemenu")).setExecutor(new MainMenu());
-                Bukkit.getPluginManager().registerEvents(new MainMenu(), this);
-                getLogger().info("实验性内容-基岩版玩家菜单已加载");
-            }
         }
 
         getLogger().info("任渊生存服务端功能插件加载完毕,作者:RENaa_FD");

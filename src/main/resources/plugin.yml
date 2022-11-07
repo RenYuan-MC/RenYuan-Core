@@ -20,9 +20,6 @@ commands:
   renyuancore:
     description: "任渊功能插件相关指令"
     usage: ""
-  obemenu:
-    description: "基岩版菜单"
-    usage: ""
 permissions:
   spawn.build:
     description: "主城建筑权限"
