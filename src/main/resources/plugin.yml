@@ -21,12 +21,6 @@ commands:
     description: "任渊功能插件相关指令"
     usage: ""
 permissions:
-  spawn.build:
-    description: "主城建筑权限"
-    default: op
-  spawn.set:
-    description: "主城设置权限"
-    default: op
   renyuancore.admin:
     description: "任渊生存功能核心的主权限"
     default: op
