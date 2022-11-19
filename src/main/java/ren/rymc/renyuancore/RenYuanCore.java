@@ -6,7 +6,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.geyser.GeyserPocketUICheck;
-import ren.rymc.renyuancore.protect.AntiUserName;
 import ren.rymc.renyuancore.protect.NotBoom;
 import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.SpawnExtension;
@@ -52,11 +51,6 @@ public final class RenYuanCore extends JavaPlugin {
             if (config.getBoolean("GeyserPocketUICheck.Enable", false)) {
                 Bukkit.getPluginManager().registerEvents(new GeyserPocketUICheck(), this);
                 getLogger().info("基岩版PocketUI检测模块已加载");
-            }
-
-            if (config.getBoolean("AntiUserName.Enable", true)) {
-                Bukkit.getPluginManager().registerEvents(new AntiUserName(), this);
-                getLogger().info("基岩版玩家名称检测模块已加载");
             }
 
             if(config.getBoolean("BedrockRespawnMenu.Enable", true)){
