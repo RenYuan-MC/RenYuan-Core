@@ -5,8 +5,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
 import ren.rymc.renyuancore.command.RenYuanCommand;
-import ren.rymc.renyuancore.geyser.GeyserPocketUICheck;
-import ren.rymc.renyuancore.protect.NotBoom;
 import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.SpawnExtension;
 
@@ -30,11 +28,6 @@ public final class RenYuanCore extends JavaPlugin {
         requireNonNull(getCommand("renyuancore")).setTabCompleter(new RenYuanCommand());
         getLogger().info("主指令已注册");
 
-        if (config.getBoolean("NotBoom.Enable", true)) {
-            Bukkit.getPluginManager().registerEvents(new NotBoom(), this);
-            getLogger().info("防爆模块已加载,魔改自Coby_Cola的NotBoom插件");
-        }
-
         if (config.getBoolean("Metrics.Enable", true)) {
             new ren.rymc.renyuancore.cstats.Metrics(this);
             new ren.rymc.renyuancore.bstats.Metrics(this,16814);
@@ -47,11 +40,6 @@ public final class RenYuanCore extends JavaPlugin {
 
         }
         if(Bukkit.getPluginManager().getPlugin("floodgate") != null){
-
-            if (config.getBoolean("GeyserPocketUICheck.Enable", false)) {
-                Bukkit.getPluginManager().registerEvents(new GeyserPocketUICheck(), this);
-                getLogger().info("基岩版PocketUI检测模块已加载");
-            }
 
             if(config.getBoolean("BedrockRespawnMenu.Enable", true)){
                 Bukkit.getPluginManager().registerEvents(new RespawnMenu(), this);
