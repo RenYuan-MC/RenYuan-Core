@@ -2,43 +2,10 @@
 #此插件集成了一些我自己写的功能和服务端数据统计
 #你可以在 https://github.com/lRENyaaa/RenYuan-Core 查看本插件源代码
 
-#防爆模块
-NotBoom:
-  #是否启用
-  Enable: true
-  #true开启保护 false关闭保护
-  #TNT爆炸
-  TNT: true
-  #末影水晶爆炸
-  EnderCrystal: true
-  #苦力怕爆炸
-  Creeper: true
-  #凋零头爆炸
-  WitherSkull: true
-  #凋零生成爆炸
-  Wither: true
-  #火焰弹爆炸
-  FireBall: true
-  #TNT矿车
-  TNTMinecart: true
-  #凋零破坏
-  WitherDestroy: true
-  #方块爆炸(重生锚和床)
-  BlockExplode: true
-  #其他爆炸(未知原因的)
-  Other: false
-
 #本服务端使用CStats来获取服务端使用统计
 #数据统计可以前往 http://cstats.iroselle.com/plugin/bukkit/RenYuan-Core 查看
 Metrics:
   #是否启用
-  Enable: true
-
-#基岩版玩家名称保护
-#这是用于防止Java版玩家使用基岩版玩家前缀进入服务器的
-#因为在同一个UUID下不同玩家名称可能会导致未知的问题
-#你如果对Floodgate插件的详细功能不够清楚,请不要动它
-AntiUserName:
   Enable: true
 
 #基岩版玩家死亡重生时的菜单
@@ -57,22 +24,6 @@ Message:
   PlayerSpawn: "已将你传送到主城"
   #设置主城的提示
   SetSpawn: "已设置主城位置"
-
-#检测基岩版玩家是否使用了PocketUI
-#代码参考来自 https://github.com/zimzaza4/BedrockPocketUIWarn
-GeyserPocketUICheck:
-  #是否启用
-  Enable: false
-  #是否踢出玩家
-  Kick:
-    Enable: false
-    #踢出玩家后发送的信息
-    Message: "请将设置选项视频中的UI档案设置为经典"
-  #是否向玩家发送信息(在不踢出玩家的情况下)
-  SendMessage:
-    Enable: true
-    #向玩家发送的信息
-    Message: "服务器不能完美兼容PocketUI,请将设置选项视频中的UI档案设置为经典以提升你的游戏体验"
 
 
 #禁止在某个世界圈地

@@ -1,8 +1,5 @@
 package ren.rymc.renyuancore;
 
-import com.Zrips.CMI.utils.SpawnUtil;
-import com.earth2me.essentials.IEssentials;
-import com.earth2me.essentials.spawn.EssentialsSpawn;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -10,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import ren.rymc.renyuancore.spawn.SpawnLocationGetter;
 
 public class RenYuanCoreAPI {
 
@@ -28,24 +26,10 @@ public class RenYuanCoreAPI {
     }
 
     public static Location getSpawnLocation(Player player) {
-        Location spawn = getESSSpawnLocation(player);
-        if(spawn == null) spawn = getCMISpawnLocation(player);
+        Location spawn = SpawnLocationGetter.getESSSpawnLocation(player);
+        if(spawn == null) spawn = SpawnLocationGetter.getCMISpawnLocation(player);
         return spawn;
     }
-
-    public static Location getESSSpawnLocation(Player player) {
-        if (getPlugin("EssentialsSpawn") == null || getPlugin("Essentials") == null) return null;
-        EssentialsSpawn essSpawn = (EssentialsSpawn) getPlugin("EssentialsSpawn");
-        IEssentials ess = (IEssentials) getPlugin("Essentials");
-        if (essSpawn == null || ess == null) return null;
-        return essSpawn.getSpawn(ess.getUser(player).getGroup());
-    }
-
-    public static Location getCMISpawnLocation(Player player){
-        if (getPlugin("CMI") == null || getPlugin("CMILib") == null) return null;
-        return SpawnUtil.getSpawnPoint(player);
-    }
-
 
     public static void reloadPlugin(){
         reloadPluginConfig();
