@@ -68,6 +68,14 @@ public class SpawnLocationGetter {
     }
 
     public static Location getESSSpawnLocation(Player player) {
+
+        // 如不使用反射,则代码是这样的:
+        //     if (getPlugin("EssentialsSpawn") == null || getPlugin("Essentials") == null) return null;
+        //     EssentialsSpawn essSpawn = (EssentialsSpawn) getPlugin("EssentialsSpawn");
+        //     IEssentials ess = (IEssentials) getPlugin("Essentials");
+        //     if (essSpawn == null || ess == null) return null;
+        //     return essSpawn.getSpawn(ess.getUser(player).getGroup());
+
         if (!essStatus) return null;
         try {
             return (Location) essSpawnGetSpawnMethod.invoke(essSpawn,essGetGroupMethod.invoke(essGetUserMethod.invoke(ess,player)));
@@ -77,7 +85,14 @@ public class SpawnLocationGetter {
 
     }
 
+
     public static Location getCMISpawnLocation(Player player){
+
+        // 如不使用反射,则代码是这样的:
+        //     if (getPlugin("CMI") == null || getPlugin("CMILib") == null) return null;
+        //     return SpawnUtil.getSpawnPoint(player);
+
+
         if (!cmiStatus) return null;
         try {
             return (Location) cmiGetSpawnMethod.invoke(cmiSpawnClass,player);
