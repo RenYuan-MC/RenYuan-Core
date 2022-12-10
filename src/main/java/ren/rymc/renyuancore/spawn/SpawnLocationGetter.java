@@ -21,7 +21,7 @@ public class SpawnLocationGetter {
     private static Object ess;
     private static Object essSpawn;
 
-    private static Class cmiSpawnClass;
+    private static Class<?> cmiSpawnClass;
     private static Method essGetUserMethod;
     private static Method essSpawnGetSpawnMethod;
     private static Method essGetGroupMethod;
@@ -57,8 +57,8 @@ public class SpawnLocationGetter {
         }
 
         try {
-            cmiSpawnClass = Class.forName(cmiSpawnName);
 
+            cmiSpawnClass = Class.forName(cmiSpawnName);
             cmiGetSpawnMethod = Class.forName(cmiSpawnName).getMethod("getSpawnPoint", Player.class);
 
         } catch (NoSuchMethodException | ClassNotFoundException e) {
