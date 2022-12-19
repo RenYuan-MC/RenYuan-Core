@@ -57,4 +57,7 @@ public class RenYuanCoreAPI {
         return getPlugin().getConfig();
     }
 
+    @Deprecated
+    public static void refreshSpawnLocation(){}
+
 }
