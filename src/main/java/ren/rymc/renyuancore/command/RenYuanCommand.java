@@ -10,12 +10,11 @@ import org.geysermc.floodgate.api.FloodgateApi;
 import org.jetbrains.annotations.NotNull;
 import ren.rymc.renyuancore.RenYuanCoreAPI;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 public class RenYuanCommand implements CommandExecutor, TabExecutor {
+
+    private final List<String> list = Arrays.asList("help", "reload", "ui");
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
@@ -27,19 +26,9 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
                     "/RenYuanCore reload all - 重载插件",
                     "/RenYuanCore ui <玩家名> - 获取基岩版玩家UI模式"
             );
-        }else if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("renyuancore.reload")){
-            if(args.length != 2) return true;
-            if(args[1].equalsIgnoreCase("config")){
-                RenYuanCoreAPI.reloadPluginConfig();
-                RenYuanCoreAPI.sendMessage(sender, "配置文件已经重载(仅部分功能重载)");
-            }else if(args[1].equalsIgnoreCase("all")) {
-                RenYuanCoreAPI.reloadPlugin();
-                RenYuanCoreAPI.sendMessage(sender,
-                        "插件已经完成重载",
-                        "这个功能仍未完成,仅能开启部分未开启的模块,也不受支持",
-                        "如需要彻底重载请重启服务器"
-                );
-            }
+        }else if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("renyuancore.admin")){
+            RenYuanCoreAPI.reloadPluginConfig();
+            RenYuanCoreAPI.sendMessage(sender, "配置文件已经重载(仅部分功能重载)");
         }else if(args[0].equalsIgnoreCase("ui") && Bukkit.getPlayerExact(args[1]) != null && Objects.requireNonNull(Bukkit.getPlayerExact(args[1])).isOnline() ) {
             Player player = Objects.requireNonNull(Bukkit.getPlayer(args[1]));
             UUID uuid = player.getUniqueId();
@@ -55,18 +44,7 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
 
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, String[] args) {
-        if (args.length == 1){
-            List<String> list = new ArrayList<>();
-            list.add("help");
-            list.add("reload");
-            list.add("ui");
-            return list;
-        }else if (args.length == 2 && args[0].equalsIgnoreCase("reload")) {
-            List<String> list = new ArrayList<>();
-            list.add("config");
-            list.add("all");
-            return list;
-        }
+        if (args.length == 1) return list;
         return null;
     }
 }

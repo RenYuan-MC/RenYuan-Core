@@ -30,12 +30,9 @@ public class RenYuanCoreAPI {
         if(spawn == null) spawn = SpawnLocationGetter.getCMISpawnLocation(player);
         return spawn;
     }
-
+    @Deprecated
     public static void reloadPlugin(){
         reloadPluginConfig();
-        getPlugin().onDisable();
-        getPlugin().onLoad();
-        getPlugin().onEnable();
     }
 
     public static void reloadPluginConfig(){
