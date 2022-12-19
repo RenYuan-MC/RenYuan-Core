@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.geysermc.floodgate.api.FloodgateApi;
 import org.jetbrains.annotations.NotNull;
@@ -12,9 +11,7 @@ import ren.rymc.renyuancore.RenYuanCoreAPI;
 
 import java.util.*;
 
-public class RenYuanCommand implements CommandExecutor, TabExecutor {
-
-    private final List<String> list = Arrays.asList("help", "reload", "ui");
+public class RenYuanCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
@@ -40,11 +37,5 @@ public class RenYuanCommand implements CommandExecutor, TabExecutor {
             RenYuanCoreAPI.sendMessage(sender, "请使用/RenYuanCore help获取帮助");
         }
         return true;
-    }
-
-    @Override
-    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, String[] args) {
-        if (args.length == 1) return list;
-        return null;
     }
 }

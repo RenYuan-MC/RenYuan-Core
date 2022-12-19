@@ -8,11 +8,15 @@ import ren.rymc.renyuancore.command.RenYuanCommand;
 import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.SpawnExtension;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static java.util.Objects.requireNonNull;
 
 public final class RenYuanCore extends JavaPlugin {
 
-    public static RenYuanCore plugin;
+    private static RenYuanCore plugin;
+    private final List<String> list = Arrays.asList("help", "reload", "ui");
 
     @Override
     public void onEnable() {
@@ -25,7 +29,7 @@ public final class RenYuanCore extends JavaPlugin {
         RenYuanCoreAPI.refreshPrefix();
 
         requireNonNull(getCommand("renyuancore")).setExecutor(new RenYuanCommand());
-        requireNonNull(getCommand("renyuancore")).setTabCompleter(new RenYuanCommand());
+        requireNonNull(getCommand("renyuancore")).setTabCompleter((s, c, al, a) -> a.length == 1 ? list : null);
         getLogger().info("主指令已注册");
 
         if (config.getBoolean("Metrics.Enable", true)) {
