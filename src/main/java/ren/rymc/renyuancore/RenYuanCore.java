@@ -44,7 +44,6 @@ public final class RenYuanCore extends JavaPlugin {
 
         }
         if(Bukkit.getPluginManager().getPlugin("floodgate") != null){
-
             if(config.getBoolean("BedrockRespawnMenu.Enable", true)){
                 Bukkit.getPluginManager().registerEvents(new RespawnMenu(), this);
                 getLogger().info("基岩版死亡重生菜单模块已加载");

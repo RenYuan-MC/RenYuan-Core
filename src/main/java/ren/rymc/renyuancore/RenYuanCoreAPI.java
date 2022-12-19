@@ -50,7 +50,7 @@ public class RenYuanCoreAPI {
     }
 
     public static void refreshPrefix(){
-        prefix = getConfig().getString("Message.Prefix", "§f[§6服务器§f] ");
+        prefix = getConfig().getString("Prefix", "§f[§6服务器§f] ");
     }
 
     public static FileConfiguration getConfig(){

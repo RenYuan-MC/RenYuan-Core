@@ -4,7 +4,6 @@ main: ren.rymc.renyuancore.RenYuanCore
 softdepend:
   - floodgate
   - Multiverse-Core
-  - QuickShop
   - Essentials
   - EssentialsSpawn
   - CMI
@@ -14,12 +13,12 @@ softdepend:
 api-version: 1.17
 authors:
   - RENaa_FD
-website: https://rymc.ren/
+website: https://rymc.ltd/
 description: "任渊生存服务端功能核心插件"
 commands:
   renyuancore:
     description: "任渊功能插件相关指令"
-    usage: ""
+    usage: "§f[§6服务器§f] 请使用/RenYuanCore help获取帮助"
 permissions:
   renyuancore.admin:
     description: "任渊生存功能核心的主权限"
