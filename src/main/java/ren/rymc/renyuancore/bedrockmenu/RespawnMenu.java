@@ -5,7 +5,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.geysermc.cumulus.SimpleForm;
 import org.geysermc.cumulus.response.SimpleFormResponse;
 import org.geysermc.cumulus.util.FormImage;
@@ -18,12 +17,7 @@ public class RespawnMenu implements Listener {
 
     @EventHandler
     public void PlayerRespawnEvent(PlayerRespawnEvent event){
-        new BukkitRunnable(){
-            @Override
-            public void run(){
-                SendRespawnMenu(event.getPlayer());
-            }
-        }.runTaskLater(RenYuanCoreAPI.getPlugin(),20L);
+        Bukkit.getScheduler().runTaskLater(RenYuanCoreAPI.getPlugin(),() -> SendRespawnMenu(event.getPlayer()),20L);
     }
 
     private void SendRespawnMenu(Player player) {
