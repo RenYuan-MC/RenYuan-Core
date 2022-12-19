@@ -1,7 +1,6 @@
 package ren.rymc.renyuancore.command;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -11,9 +10,9 @@ import ren.rymc.renyuancore.RenYuanCoreAPI;
 
 import java.util.*;
 
-public class RenYuanCommand implements CommandExecutor {
+public class Command implements CommandExecutor {
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull org.bukkit.command.Command command, @NotNull String label, String[] args) {
 
         if (args.length == 0 || args[0].equalsIgnoreCase("help")){
             RenYuanCoreAPI.sendMessage(sender,

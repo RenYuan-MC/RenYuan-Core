@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
-import ren.rymc.renyuancore.command.RenYuanCommand;
+import ren.rymc.renyuancore.command.Command;
 import ren.rymc.renyuancore.protect.ResCreateLimit;
 import ren.rymc.renyuancore.spawn.SpawnExtension;
 
@@ -28,7 +28,7 @@ public final class RenYuanCore extends JavaPlugin {
 
         RenYuanCoreAPI.refreshPrefix();
 
-        requireNonNull(getCommand("renyuancore")).setExecutor(new RenYuanCommand());
+        requireNonNull(getCommand("renyuancore")).setExecutor(new Command());
         requireNonNull(getCommand("renyuancore")).setTabCompleter((s, c, al, a) -> a.length == 1 ? list : null);
         getLogger().info("主指令已注册");
 
