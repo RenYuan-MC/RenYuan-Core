@@ -58,6 +58,11 @@ public class RenYuanCoreAPI {
     }
 
     @Deprecated
+    public static String getSpawnWorldName(Player player){
+        return getSpawnLocation(player).getWorld().getName();
+    }
+
+    @Deprecated
     public static void refreshSpawnLocation(){}
 
 }
