@@ -9,7 +9,6 @@ softdepend:
   - CMI
   - CMILib
   - Residence
-  - ViaVersion
 api-version: 1.17
 authors:
   - RENaa_FD

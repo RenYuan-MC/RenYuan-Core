@@ -26,6 +26,7 @@ public class SpawnLocationGetter {
     private static Method essSpawnGetSpawnMethod;
     private static Method essGetGroupMethod;
     private static Method cmiGetSpawnMethod;
+    private static Method cmiGetBukkitLocationMethod;
 
 
     static {
@@ -33,6 +34,7 @@ public class SpawnLocationGetter {
         String essSpawnName = "com.earth2me.essentials.spawn.EssentialsSpawn";
         String essUser = "com.earth2me.essentials.User";
         String cmiSpawnName = "com.Zrips.CMI.utils.SpawnUtil";
+        String cmiLocation = "net.Zrips.CMILib.Container.CMILocation";
 
         essPlugin = getPlugin("Essentials");
         essSpawnPlugin = getPlugin("EssentialsSpawn");
@@ -60,6 +62,8 @@ public class SpawnLocationGetter {
 
             cmiSpawnClass = Class.forName(cmiSpawnName);
             cmiGetSpawnMethod = Class.forName(cmiSpawnName).getMethod("getSpawnPoint", Player.class);
+
+            cmiGetBukkitLocationMethod = Class.forName(cmiLocation).getMethod("getBukkitLoc");
 
         } catch (NoSuchMethodException | ClassNotFoundException e) {
             cmiStatus = false;
@@ -90,12 +94,12 @@ public class SpawnLocationGetter {
 
         // 如不使用反射,则代码是这样的:
         //     if (getPlugin("CMI") == null || getPlugin("CMILib") == null) return null;
-        //     return SpawnUtil.getSpawnPoint(player);
+        //     return SpawnUtil.getSpawnPoint(player).getBukkitLoc();
 
 
         if (!cmiStatus) return null;
         try {
-            return (Location) cmiGetSpawnMethod.invoke(cmiSpawnClass,player);
+            return (Location) cmiGetBukkitLocationMethod.invoke(cmiGetSpawnMethod.invoke(cmiSpawnClass,player));
         } catch (IllegalAccessException | InvocationTargetException e) {
             return null;
         }
