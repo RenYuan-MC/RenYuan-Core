@@ -10,6 +10,7 @@ softdepend:
   - CMILib
   - Residence
 api-version: 1.17
+folia-supported: true
 authors:
   - RENaa_FD
 website: https://rymc.ltd/

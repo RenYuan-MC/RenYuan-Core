@@ -7,6 +7,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import ren.rymc.renyuancore.RenYuanCoreAPI;
+import ren.rymc.renyuancore.folia.FoliaUtil;
 
 public class SpawnExtension implements Listener {
 
@@ -18,6 +19,6 @@ public class SpawnExtension implements Listener {
         if (spawn == null) return;
         if (!player.getWorld().getName().equals(spawn.getWorld().getName())) return;
         if (event.getDamage() < 3E38) event.setCancelled(true);
-        if (event.getCause().equals(EntityDamageEvent.DamageCause.VOID)) player.teleport(spawn);
+        if (event.getCause().equals(EntityDamageEvent.DamageCause.VOID)) FoliaUtil.teleport(player, spawn);
     }
 }

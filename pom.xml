@@ -6,7 +6,7 @@
 
     <groupId>ren.rymc.renyuancore</groupId>
     <artifactId>RenYuan-Core</artifactId>
-    <version>7.3.0-dev</version>
+    <version>7.4.0-dev</version>
     <packaging>jar</packaging>
 
     <name>RenYuan-Core</name>
