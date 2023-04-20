@@ -1,6 +1,7 @@
 package ren.rymc.renyuancore;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
@@ -32,9 +33,12 @@ public final class RenYuanCore extends JavaPlugin {
 
         RenYuanCoreAPI.refreshPrefix();
 
-        requireNonNull(getCommand("renyuancore")).setExecutor(new Command());
-        requireNonNull(getCommand("renyuancore")).setTabCompleter((s, c, al, a) -> a.length == 1 ? list : null);
-        getLogger().info("主指令已注册");
+        PluginCommand command = getCommand("renyuancore");
+        if (command != null) {
+            command.setExecutor(new Command());
+            command.setTabCompleter((s, c, al, a) -> a.length == 1 ? list : null);
+            getLogger().info("主指令已注册");
+        }
 
         if (config.getBoolean("Metrics.Enable", true)) {
             new ren.rymc.renyuancore.cstats.Metrics(this);
