@@ -1,5 +1,6 @@
-package ren.rymc.renyuancore;
+package ltd.rymc.survival.core;
 
+import ltd.rymc.survival.core.spawn.SpawnLocationGetter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -7,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import ren.rymc.renyuancore.spawn.SpawnLocationGetter;
 
 public class RenYuanCoreAPI {
 

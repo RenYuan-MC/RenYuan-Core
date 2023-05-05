@@ -1,4 +1,4 @@
-package ren.rymc.renyuancore.cstats;
+package ltd.rymc.survival.core.cstats;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.ServicePriority;
-import ren.rymc.renyuancore.folia.FoliaUtil;
+import ltd.rymc.survival.core.folia.FoliaUtil;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;

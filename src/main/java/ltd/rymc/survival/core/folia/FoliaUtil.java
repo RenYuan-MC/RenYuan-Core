@@ -1,4 +1,4 @@
-package ren.rymc.renyuancore.folia;
+package ltd.rymc.survival.core.folia;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

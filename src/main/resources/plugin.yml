@@ -1,6 +1,6 @@
 name: RenYuan-Core
 version: '${project.version}'
-main: ren.rymc.renyuancore.RenYuanCore
+main: ltd.rymc.survival.core.RenYuanCore
 softdepend:
   - floodgate
   - Multiverse-Core

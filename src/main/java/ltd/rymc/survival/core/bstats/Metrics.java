@@ -12,7 +12,7 @@
  *
  * Violations will result in a ban of your plugin and account from bStats.
  */
-package ren.rymc.renyuancore.bstats;
+package ltd.rymc.survival.core.bstats;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -46,7 +46,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import ren.rymc.renyuancore.folia.FoliaUtil;
+import ltd.rymc.survival.core.folia.FoliaUtil;
 
 public class Metrics {
 

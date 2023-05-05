@@ -1,13 +1,13 @@
-package ren.rymc.renyuancore.spawn;
+package ltd.rymc.survival.core.spawn;
 
+import ltd.rymc.survival.core.RenYuanCoreAPI;
+import ltd.rymc.survival.core.folia.FoliaUtil;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import ren.rymc.renyuancore.RenYuanCoreAPI;
-import ren.rymc.renyuancore.folia.FoliaUtil;
 
 public class SpawnExtension implements Listener {
 

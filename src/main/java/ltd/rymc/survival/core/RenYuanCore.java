@@ -1,14 +1,15 @@
-package ren.rymc.renyuancore;
+package ltd.rymc.survival.core;
 
+import ltd.rymc.survival.core.bedrockmenu.RespawnMenu;
+import ltd.rymc.survival.core.command.Command;
+import ltd.rymc.survival.core.cstats.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import ren.rymc.renyuancore.bedrockmenu.RespawnMenu;
-import ren.rymc.renyuancore.command.Command;
-import ren.rymc.renyuancore.folia.FoliaUtil;
-import ren.rymc.renyuancore.protect.ResCreateLimit;
-import ren.rymc.renyuancore.spawn.SpawnExtension;
+import ltd.rymc.survival.core.folia.FoliaUtil;
+import ltd.rymc.survival.core.protect.ResCreateLimit;
+import ltd.rymc.survival.core.spawn.SpawnExtension;
 
 import java.util.Arrays;
 import java.util.List;
@@ -41,8 +42,8 @@ public final class RenYuanCore extends JavaPlugin {
         }
 
         if (config.getBoolean("Metrics.Enable", true)) {
-            new ren.rymc.renyuancore.cstats.Metrics(this);
-            new ren.rymc.renyuancore.bstats.Metrics(this,16814);
+            new Metrics(this);
+            new ltd.rymc.survival.core.bstats.Metrics(this,16814);
             getLogger().info("服务端数据统计模块已加载");
         }
 

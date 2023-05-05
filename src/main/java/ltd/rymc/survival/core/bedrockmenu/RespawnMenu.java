@@ -1,4 +1,4 @@
-package ren.rymc.renyuancore.bedrockmenu;
+package ltd.rymc.survival.core.bedrockmenu;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -9,8 +9,8 @@ import org.geysermc.cumulus.SimpleForm;
 import org.geysermc.cumulus.response.SimpleFormResponse;
 import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.floodgate.api.FloodgateApi;
-import ren.rymc.renyuancore.RenYuanCoreAPI;
-import ren.rymc.renyuancore.folia.FoliaUtil;
+import ltd.rymc.survival.core.RenYuanCoreAPI;
+import ltd.rymc.survival.core.folia.FoliaUtil;
 
 import java.util.UUID;
 

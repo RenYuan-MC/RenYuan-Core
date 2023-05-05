@@ -1,12 +1,12 @@
-package ren.rymc.renyuancore.command;
+package ltd.rymc.survival.core.command;
 
+import ltd.rymc.survival.core.RenYuanCoreAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.geysermc.floodgate.api.FloodgateApi;
 import org.jetbrains.annotations.NotNull;
-import ren.rymc.renyuancore.RenYuanCoreAPI;
 
 import java.util.*;
 
